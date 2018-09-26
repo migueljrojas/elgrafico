@@ -1,0 +1,167 @@
+.article {
+    $a:&;
+
+    &__section {
+        color: $red;
+        font-family: $altFont;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+    }
+
+    &__title {
+        color: $black;
+        margin: 0 0 15px;
+    }
+
+    &__summary {
+        color: $darkGray;
+        margin: 0;
+    }
+
+    &--bigcover,
+    &--cover {
+        position: relative;
+
+        #{$a}__img {
+            @include img;
+            margin-bottom: -15%;
+        }
+
+        #{$a}__data {
+            position:relative;
+            z-index: 2;
+            background: $white;
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 3%;
+            display: flex;
+        }
+
+        #{$a}__title {
+            font-size: 32px;
+
+            @include mq(md) {
+                font-size: 44px;
+            }
+        }
+
+        #{$a}__summary,
+        #{$a}__section {
+            font-size: 16px;
+
+            @include mq(md) {
+                font-size: 21px;
+            }
+        }
+
+        #{$a}__sponsor {
+            padding-left: 20px;
+            margin-left: 20px;
+            max-width: 160px;
+            border-left: 1px solid $lightGray;
+        }
+    }
+
+    &--cover {
+        #{$a}__data {
+            width: 90%;
+            padding: 5%;
+        }
+
+        #{$a}__title {
+            font-size: 21px;
+            text-align: left;
+
+            @include mq(md) {
+                font-size: 24px;
+            }
+        }
+
+        #{$a}__summary {
+            text-align: left;
+        }
+
+        #{$a}__summary,
+        #{$a}__section {
+            font-size: 14px;
+
+            @include mq(md) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &--picleft {
+        display: flex;
+
+        #{$a}__data {
+            width: 50%;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #{$a}__img {
+            @include img($ratio: 28.25%, $width: 50%);
+        }
+    }
+
+    &--picright {
+        display: flex;
+
+        #{$a}__data {
+            width: 50%;
+            padding-left: 20px;
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #{$a}__img {
+            @include img($ratio: 28.25%, $width: 50%);
+            order: 2;
+        }
+    }
+
+    &--compact {
+        #{$a}__title {
+            font-size: 16px;
+
+            @include mq(md) {
+                font-size: 18px;
+            }
+        }
+
+        #{$a}__section {
+            font-size: 12px;
+
+            @include mq(md) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &--latapa {
+        #{$a}__img {
+            @include img($ratio: 135%, $width: 100%);
+
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        #{$a}__data {
+            padding-top: 15px;
+        }
+    }
+
+    &--gray {
+        #{$a}__data {
+            background: $lightestGray;
+        }
+    }
+}

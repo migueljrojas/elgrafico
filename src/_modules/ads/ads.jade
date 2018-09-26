@@ -1,0 +1,4 @@
+mixin ads(type, src)
+    .ads(class="#{type == 'leaderboard' ? 'ads--leaderboard' : ''} #{type == 'rectangle' ? 'ads--rectangle' : ''} #{type == 'skyscrapper' ? 'ads--skyscrapper' : ''}")
+        a(href="#")
+            img(src=src)

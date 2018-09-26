@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -14665,18 +14665,76 @@ return jQuery;
 var Header = function() {
     var header = $('.header');
     var body = $('body');
-    var menuOpen = $('.header__hamburguer');
-    var menuClose = $('.header__nav__close');
+    var menuOpen = $('.header__hamburguer--mobile');
+    var searchtoggle = $('.header__search__toggle');
+    var searchBox = $('.header__search');
+    var indexOpen = $('.header__hamburguer--nav');
+    var index = $('.header__nav__menu');
+    var searchInput = $('.header__search__input');
 
     menuOpen.on('click', function(){
-        header.addClass('-open');
-        body.addClass('-hideOverflow');
+        header.toggleClass('-open');
+        body.toggleClass('-hideOverflow');
     });
 
-    menuClose.on('click', function(){
-        header.removeClass('-open');
-        body.removeClass('-hideOverflow');
+    indexOpen.on('click', function(){
+        $(this).toggleClass('-open');
+        index.toggleClass('-open');
     });
+
+    searchtoggle.on('click', function(e){
+        e.preventDefault();
+        searchBox.toggleClass('-open');
+        searchInput.val('');
+        searchInput.focus();
+    });
+
+    $(function() {
+        $(window).scroll(function() {
+           var scroll = $(window).scrollTop();
+
+           if (scroll >= 100) {
+               header.removeClass('-ontop');
+           } else {
+               header.addClass('-ontop');
+           }
+        });
+    });
+
+    // Select all links with hashes
+$('a[href="#"]').click(function(e){
+    e.preventDefault();
+});
+
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+      &&
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top + -80
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+        });
+      }
+    }
+  });
 };
 
 module.exports = Header;

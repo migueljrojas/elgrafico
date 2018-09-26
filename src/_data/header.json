@@ -1,6 +1,18 @@
 [
     {
-        "name":"",
-        "url":""
+        "name":"Notas",
+        "url":"/notas"
+    },
+    {
+        "name":"Fotos",
+        "url":"/fotos"
+    },
+    {
+        "name":"Videos",
+        "url":"/videos"
+    },
+    {
+        "name":"Tapas",
+        "url":"/tapas"
     }
 ]

@@ -2,6 +2,19 @@
     transition: $prop $d $e;
 }
 
+@mixin img($ratio: 56.5%, $width: 100%) {
+    position: relative;
+    width: $width;
+    overflow: hidden;
+    padding-bottom: $ratio;
+    height: 0;
+
+    img {
+        position: absolute;
+        width: 100%;
+    }
+}
+
 @mixin title($size: $lg, $color: $white, $align: 'left') {
     text-transform: uppercase;
     font-size: $size;

@@ -1,0 +1,100 @@
+[
+    {
+        "name":"MENU DE CONTENIDOS",
+        "url":"#",
+        "submenu":[
+            {
+                "name":"¡HABLA MEMORIA!",
+                "url":"/"
+            },
+            {
+                "name":"LAS ENTREVISTAS DE EL GRÁFICO",
+                "url":"/"
+            },
+            {
+                "name":"LAS CRÓNICAS DE EL GRÁFICO",
+                "url":"/"
+            },
+            {
+                "name":"UN SIGLO EN PEQUEÑAS HISTORIAS",
+                "url":"/"
+            }
+        ]
+    },
+    {
+        "name":"FOTOS",
+        "url":"#",
+        "submenu":[
+            {
+                "name":"LAS FOTOS DE EL GRÁFICO",
+                "url":"/"
+            },
+            {
+                "name":"GALERÍA",
+                "url":"/"
+            },
+            {
+                "name":"LA TAPA",
+                "url":"/"
+            }
+        ]
+    },
+    {
+        "name":"VIDEOS",
+        "url":"#",
+        "submenu":[
+            {
+                "name":"MEMORIA EMOTIVA",
+                "url":"/"
+            },
+            {
+                "name":"LA JORNADA ESTÁ AQUÍ",
+                "url":"/"
+            },
+            {
+                "name":"#NOSEPUEDECREER",
+                "url":"/"
+            }
+        ]
+    },
+    {
+        "name":"NUESTRA HISTORIA",
+        "url":"#",
+        "submenu":[
+            {
+                "name":"NAVEGADOR DE TAPAS",
+                "url":"/"
+            },
+            {
+                "name":"MEMORIA EL GRÁFICO",
+                "url":"/"
+            },
+            {
+                "name":"GRANDES COBERTURAS",
+                "url":"/"
+            }
+        ]
+    },
+    {
+        "name":"SERVICIOS",
+        "url":"#",
+        "submenu":[
+            {
+                "name":"PREGUNTAS FRECUENTES",
+                "url":"/"
+            },
+            {
+                "name":"VENTA DE FOTOS",
+                "url":"/"
+            },
+            {
+                "name":"BASES Y CONDICIONES",
+                "url":"/"
+            },
+            {
+                "name":"CONTACTO",
+                "url":"/"
+            }
+        ]
+    }
+]

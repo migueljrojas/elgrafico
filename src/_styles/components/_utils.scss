@@ -31,6 +31,13 @@
     padding-right: 0 !important;
 }
 
+.-flexrow {
+    @include mq(sm) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 .-vertical-space{
     padding-top: $base;
     padding-bottom: $base;

@@ -1,1 +1,56 @@
 footer.footer
+    .footer__top
+        .footer__top__col
+            a.footer__link.footer__link--main(href="#") Notas
+            ul.footer__links
+                li
+                    a.footer__link.footer__link--secondary(href="#") Habla Memoria!
+                li
+                    a.footer__link.footer__link--secondary(href="#") Las entrevistas de El Gráfico
+                li
+                    a.footer__link.footer__link--secondary(href="#") Las crónicas de El Gráfico
+                li
+                    a.footer__link.footer__link--secondary(href="#") Un siglo en pequeñas historias
+                    
+        .footer__top__col
+            a.footer__link.footer__link--main(href="#") Fotos
+            ul.footer__links
+                li
+                    a.footer__link.footer__link--secondary(href="#") las fotos de El Gráfico
+                li
+                    a.footer__link.footer__link--secondary(href="#") Galerías
+            a.footer__link.footer__link--main(href="#") Tapas
+            
+        .footer__top__col
+            a.footer__link.footer__link--main(href="#") Videos
+            ul.footer__links
+                li
+                    a.footer__link.footer__link--secondary(href="#") Memoria emotiva
+                li
+                    a.footer__link.footer__link--secondary(href="#") La jornada está aquí
+                li
+                    a.footer__link.footer__link--secondary(href="#") #Nosepuedecreer
+                    
+        .footer__top__col
+            ul.footer__links
+                li
+                    a.footer__link.footer__link--secondary(href="#") Preguntas frecuentes
+                li
+                    a.footer__link.footer__link--secondary(href="#") Venta de fotos
+                li
+                    a.footer__link.footer__link--secondary(href="#") Bases y condiciones
+                li
+                    a.footer__link.footer__link--secondary(href="#") Contacto
+        
+        .footer__top__col
+            ul.footer__social
+                each red in site.data.social
+                    li
+                        a(href=red.url, target="_blank")
+                            i(class="fa fa-#{red.name}")
+    .footer__bottom
+        p.footer__copy © Revistas Deportivas S.A. Todos los derechos reservados.
+        a(href="http://creatos.com")
+            img(src="/images/logo-creatos.png")
+
+    
