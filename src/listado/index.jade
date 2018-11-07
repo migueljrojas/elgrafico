@@ -1,0 +1,36 @@
+extends ../_layouts/base
+
+include ../_modules/article/article
+include ../_modules/ads/ads
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.listado
+        .listado__hero
+            h1.listado__hero__title 
+                span MEMORIA EMOTIVA
+                i
+        .listado__body
+            .container
+                .row.-flexrow
+                    each article in site.data.home.main
+                        .col-xs-24.col-sm-12.col-md-8
+                            +article('cover', article, '', false, false, false)
+                    each article in site.data.home.main
+                        .col-xs-24.col-sm-12.col-md-8
+                            +article('cover', article, '', false, false, false)
+                    each article in site.data.home.main
+                        .col-xs-24.col-sm-12.col-md-8
+                            +article('cover', article, '', false, false, false)
+                    .col-xs-24
+                        .listado__more 
+                            a.listado__more__button
+                                | VER MAS SOBRE 
+                                span Selección argentina
+                    .col-xs-24
+                        .listado__ads
+                            +ads('leaderboard', '/images/ads/flow.jpg')
+                        

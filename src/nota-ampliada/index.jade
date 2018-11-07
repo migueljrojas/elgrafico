@@ -1,0 +1,216 @@
+extends ../_layouts/base
+
+include ../_modules/article/article
+include ../_modules/ads/ads
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.nota.nota--nopic
+        section.nota__hero
+            .nota__hero__image
+                img(src='https://picsum.photos/1920/1200/')
+                
+            .nota__hero__heading__wrapper
+                .container
+                    .row
+                        .col-xs-24.col-sm-16.col-sm-offset-4
+                            .nota__hero__heading
+                                span._section Las fotos de El Gráfico
+                                h1._title 1958. Debut de Argentina en el mundial… de amarillo.
+                                span._author Por Redacción EG · 29 de agosto de 2018
+
+        section.nota__body
+            .container
+                .row
+                    .col-xs-24.col-sm-20.col-sm-offset-2
+                        p.nota__summary Papelón criollo. Argentina debuta en el Mundial de Suecia frente a Alemania luciendo el escudo y la casaca amarilla del club IFK Malmö, conseguida de raje ante la ausencia de camiseta alternativa.
+                .row
+                    .col-xs-24.col-sm-4
+                        ul.nota__body__social
+                            li 
+                                a 
+                                    i.fa.fa-instagram
+                            li
+                                a 
+                                    i.fa.fa-facebook
+                            li
+                                a
+                                    i.fa.fa-twitter
+                    .col-xs-24.col-sm-16
+                        p.nota__text.nota__text--cap Con más defensa e igual línea de ataque, aunque más veloz, la platense; provocando mayor número de situaciones peligrosas en el área penal enemiga, Boca perdió. En ello intervino la suerte, no lo negaremos. Pero no se puede decir que Gimnasia y Esgrima se ha clasificado campeón de casualidad Se puede ganar un partido de suerte, pero , no es posible llegar a una final si no se ha acreditado condiciones para ello. El año pasado, cuando Huracán ganó, fue  porque demostró que podía hacerlo. Alentados sus hombres por la posibilidad de la victoria, se multiplicaron en el esfuerzo, y cuando vencieron a Boca por tres tantos a uno, después de haber terminado el primer tiempo con uno a cero en contra, estaban habilitados para vencer a cualquier team que se presentara. Ese día Huracán era el campeón que después llegó a ser. Cuando San Lorenzo obtuvo igual triunfo en el campeonato de 1927, había demostrado durante su larga campaña méritos para serlo. No fue una casualidad, como tampoco lo es en este caso el hecho de que Gimnasia y Esgrima, un club que el año pasado sufrió serios contrastes, haya llegado a la final.
+                        .nota__highlight.nota__highlight--right
+                            p._text Cherro en un entrevero, el forward boquense realizó una performance superior a las que cumpliera últimamente.
+                        p.nota__text Cherro en un entrevero, el forward boquense realizó una performance superior a las que cumpliera últimamente. La lógica no está en un partido, sino en una sucesión de partidos. Por alguna razón se encuentran siempre en los primeros puestos quienes son mejores. Aceptamos que Boca haya tenido mala fortuna en su match final, que cayó derrotado demostrando ser más capaz que su rival, pero no neguemos valores a éste.
+                        p.nota__text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero, continúa siendo un elemento de valía y sabe asumir la dirección que desde su arco ejerce sobre sus compañeros, a quienes les señala el camino. Pero el quinteto ofensivo es bueno en realidad. Curell es el único veterano de los cinco, y de ahí que el acorde no sea más eficaz. En cambio, sus cuatro compañeros tienen juventud, entusiasmo y buen juego. Nadie lo puede discutir.
+                .row.nopadding-xs
+                    .col-xs-24
+                        .nota__image
+                            img.img-responsive(src='https://picsum.photos/1920/1080/')
+                            p.nota__image__caption La gente de las populares, que esta vez debió abonar 1 peso, se dio cita en el estadio de River Plate...y muchos de sus elementos brindaron pedradas al final.
+                .row
+                    .col-xs-24.col-sm-16.col-sm-offset-4
+                        p.nota__text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero, continúa siendo un elemento de valía y sabe asumir la dirección que desde su arco ejerce sobre sus compañeros, a quienes les señala el camino. Pero el quinteto ofensivo es bueno en realidad. Curell es el único veterano de los cinco, y de ahí que el acorde no sea más eficaz. En cambio, sus cuatro compañeros tienen juventud, entusiasmo y buen juego. Nadie lo puede discutir. En la forma en que se encuentra la línea delantera boquense en la actualidad, no es mejor que su adversaria del domingo. Varallo y Morgada son dos hombres que saben de fútbol. Malianni tiene una visión clara del arco, y Díaz es otro muchacho de capacidad. Unido a su poderío, esa línea ha jugado en este campeonato con el aliciente que significó para ella la posibilidad de salir campeón.
+                        p.nota__text Scarpone, a trompada limpia, despeja una situación peligrosa para su ciudadela. El arquero de Gimnasia fue llamado a intervenir en muchas ocasiones, respondiendo siempre de maravilla.
+                .row.nopadding-xs
+                    .col-xs-24
+                        .nota__image
+                            img.img-responsive(src='https://picsum.photos/1920/1080/')
+                .row
+                    .col-xs-24.col-sm-16.col-sm-offset-4
+                        h2.nota__inner-title JORNADA COMPLETA PARA LOS PLATENSES
+
+                    .col-xs-24.col-sm-16.col-sm-offset-4
+                        p.nota__text Si en favor de Gimnasia y Esgrima podemos emitir los juicios anteriores, a ellos nos resta agregar sus performances en las otras divisiones. Su intermedia también se clasificó vencedora del campeonato estímulo, ganándole a la de Boca Juniors por tres tantos a uno, en un partido en que el score es de una justicia inobjetable. Venció a esa intermedia, que hacía mucho tiempo que no conocía la derrota en partidos oficiales. Además de esta performance significativa, que permite suponer en la intermedia valores como para reemplazar a los de la primera en casos de emergencia, también Gimnasia y Esgrima cuenta con dos quintas divisiones que se han clasificado campeonas de sus distintas zonas. Si en favor de los que llegan a una final se pueden verter juicios encomiables, ¿qué le corresponde a Boca? Ninguno de los clubs que le aventajaron en los últimos años puede vanagloriarse de haber establecido performances similares a las de Boca. Ninguno de ellos ha hecho más méritos para obtener la victoria que ha perseguido. Ha llegado a finales y ha caído. Durante tres años es segundo. Los demás, antes y después de haber sido campeones, no pudieron ser segundos.
+                
+                        .nota__sidebar
+                            .nota__sidebar__ads
+                                +ads('rectangle', '/images/ads/corolla.jpg')
+                            section.nota__most-viewed
+                                .nota__sidebar__title
+                                    span Notas relacionadas
+                                    i
+                                .nota__most-viewed__article
+                                    +article('compact', {}, '', true, false, true)
+                                ._divider
+                                .nota__most-viewed__article
+                                    +article('compact', {}, '', true, false, true)
+                                ._divider
+                                .nota__most-viewed__article
+                                    +article('compact', {}, '', true, false, true)
+                                ._divider
+                                .nota__most-viewed__article
+                                    +article('compact', {}, '', true, false, true)
+                                ._divider
+                                .nota__most-viewed__article
+                                    +article('compact', {}, '', true, false, true)
+                
+                        .nota__highlight.nota__highlight--data.nota__highlight--left
+                            span._number 128
+                            p._text Fueron los goles convertidos en este mundial.
+                
+                        p.nota__text Con más defensa e igual línea de ataque, aunque más veloz, la platense; provocando mayor número de situaciones peligrosas en el área penal enemiga, Boca perdió. En ello intervino la suerte, no lo negaremos. Pero no se puede decir que Gimnasia y Esgrima se ha clasificado campeón de casualidad Se puede ganar un partido de suerte, pero , no es posible llegar a una final si no se ha acreditado condiciones para ello. El año pasado, cuando Huracán ganó, fue  porque demostró que podía hacerlo. Alentados sus hombres por la posibilidad de la victoria, se multiplicaron en el esfuerzo, y cuando vencieron a Boca por tres tantos a uno, después de haber terminado el primer tiempo con uno a cero en contra, estaban habilitados para vencer a cualquier team que se presentara. Ese día Huracán era el campeón que después llegó a ser. Cuando San Lorenzo obtuvo igual triunfo en el campeonato de 1927, había demostrado durante su larga campaña méritos para serlo. No fue una casualidad, como tampoco lo es en este caso el hecho de que Gimnasia y Esgrima, un club que el año pasado sufrió serios contrastes, haya llegado a la final. Cherro en un entrevero, el forward boquense realizó una performance superior a vvvttttlas que cumpliera últimamente. La lógica no está en un partido, sino en una sucesión de partidos. Por alguna razón se encuentran siempre en los primeros puestos quienes son mejores. Aceptamos que Boca haya tenido mala fortuna en su match final, que cayó derrotado demostrando ser más capaz que su rival, pero no neguemos valores a éste.
+                        
+
+                        p.nota__text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero, continúa siendo un elemento de valía y sabe asumir la dirección que desde su arco ejerce sobre sus compañeros, a quienes les señala el camino. Pero el quinteto ofensivo es bueno en realidad. Curell es el único veterano de los cinco, y de ahí que el acorde no sea más eficaz. En cambio, sus cuatro compañeros tienen juventud, entusiasmo y buen juego. Nadie lo puede discutir.
+
+                        p.nota__text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero, continúa siendo un elemento de valía y sabe asumir la dirección que desde su arco ejerce sobre sus compañeros, a quienes les señala el camino. Pero el quinteto ofensivo es bueno en realidad. Curell es el único veterano de los cinco, y de ahí que el acorde no sea más eficaz. En cambio, sus cuatro compañeros tienen juventud, entusiasmo y buen juego. Nadie lo puede discutir. En la forma en que se encuentra la línea delantera boquense en la actualidad, no es mejor que su adversaria del domingo. Varallo y Morgada son dos hombres que saben de fútbol. Malianni tiene una visión clara del arco, y Díaz es otro muchacho de capacidad. Unido a su poderío, esa línea ha jugado en este campeonato con el aliciente que significó para ella la posibilidad de salir campeón.
+
+                        p.nota__text Scarpone, a trompada limpia, despeja una situación peligrosa para su ciudadela. El arquero de Gimnasia fue llamado
+
+                        ul.nota__facts
+                            li.nota__facts__item
+                                span._number 1
+                                p._text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero
+                            li.nota__facts__item
+                                span._number 2
+                                p._text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero
+                            li.nota__facts__item
+                                span._number 3
+                                p._text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero
+                            li.nota__facts__item
+                                span._number 4
+                                p._text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero
+
+                        p.nota__text Si en favor de Gimnasia y Esgrima podemos emitir los juicios anteriores, a ellos nos resta agregar sus performances en las otras divisiones. Su intermedia también se clasificó vencedora del campeonato estímulo, ganándole a la de Boca Juniors por tres tantos a uno, en un partido en que el score es de una justicia inobjetable. Venció a esa intermedia, que hacía mucho tiempo que no conocía la derrota en partidos oficiales. Además de esta performance significativa, que permite suponer en la intermedia valores como para reemplazar a los de la primera en casos de emergencia, también Gimnasia y Esgrima cuenta con dos quintas divisiones que se han clasificado campeonas de sus distintas zonas.
+
+                        p.nota__text Si en favor de los que llegan a una final se pueden verter juicios encomiables, ¿qué le corresponde a Boca? Ninguno de los clubs que le aventajaron en los últimos años puede vanagloriarse de haber establecido performances similares a las de Boca. Ninguno de ellos ha hecho más méritos para obtener la victoria que ha perseguido. Ha llegado a finales y ha caído. Durante tres años es segundo. Los demás, antes y después de haber sido campeones, no pudieron ser segundos.
+
+                        h2.nota__inner-title OPINIÓN DEL CAPITÁN
+
+                        p.nota__text Con más defensa e igual línea de ataque, aunque más veloz, la platense; provocando mayor número de situaciones peligrosas en el área penal enemiga, Boca perdió. En ello intervino la suerte, no lo negaremos. Pero no se puede decir que Gimnasia y Esgrima se ha clasificado campeón de casualidad Se puede ganar un partido de suerte, pero , no es posible llegar a una final si no se ha acreditado condiciones para ello. El año pasado, cuando Huracán ganó, fue  porque demostró que podía hacerlo. Alentados sus hombres por la posibilidad de la victoria, se multiplicaron en el esfuerzo, y cuando vencieron a Boca por tres tantos a uno, después de haber terminado el primer tiempo con uno a cero en contra, estaban habilitados para vencer a cualquier team que se presentara. Ese día Huracán era el campeón que después llegó a ser. Cuando San Lorenzo obtuvo igual triunfo en el campeonato de 1927, había demostrado durante su larga campaña méritos para serlo. No fu
+
+                        .nota__highlight.nota__highlight--big
+                            p._text “Por alguna razón se encuentran siempre en los primeros puestos quienes son mejores y constantes.”
+
+                        p.nota__text Si en favor de Gimnasia y Esgrima podemos emitir los juicios anteriores, a ellos nos resta agregar sus performances en las otras divisiones. Su intermedia también se clasificó vencedora del campeonato estímulo, ganándole a la de Boca Juniors por tres tantos a uno, en un partido en que el score es de una justicia inobjetable. Venció a esa intermedia, que hacía mucho tiempo que no conocía la derrota en partidos oficiales. Además de esta performance significativa, que permite suponer en la intermedia valores como para reemplazar a los de la primera en casos de emergencia, también Gimnasia y Esgrima cuenta con dos quintas divisiones que se han clasificado campeonas de sus distintas zonas. Si en favor de los que llegan a una final se pueden verter juicios encomiables, ¿qué le corresponde a Boca? Ninguno de los clubs que le aventajaron en los últimos años puede vanagloriarse de haber establecido performances similares a las de Boca. Ninguno de ellos ha hecho más méritos para obtener la victoria que ha perseguido. Ha llegado a finales y ha caído. Durante tres años es segundo. Los demás, antes y después de haber sido campeones, no pudieron ser segundos.
+                        
+                        .nota__highlight.nota__highlight--left
+                            p._text
+                                img(src="https://picsum.photos/200/320/")
+
+                        p.nota__text Con más defensa e igual línea de ataque, aunque más veloz, la platense; provocando mayor número de situaciones peligrosas en el área penal enemiga, Boca perdió. En ello intervino la suerte, no lo negaremos. Pero no se puede decir que Gimnasia y Esgrima se ha clasificado campeón de casualidad Se puede ganar un partido de suerte, pero , no es posible llegar a una final si no se ha acreditado condiciones para ello. El año pasado, cuando Huracán ganó, fue  porque demostró que podía hacerlo. Alentados sus hombres por la posibilidad de la victoria, se multiplicaron en el esfuerzo, y cuando vencieron a Boca por tres tantos a uno, después de haber terminado el primer tiempo con uno a cero en contra, estaban habilitados para vencer a cualquier team que se presentara. Ese día Huracán era el campeón que después llegó a ser. Cuando San Lorenzo obtuvo igual triunfo en el campeonato de 1927, había demostrado durante su larga campaña méritos para serlo.
+                        
+                        p.nota__text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero, continúa siendo un elemento de valía y sabe asumir la dirección que desde su arco ejerce sobre sus compañeros, a quienes les señala el camino. Pero el quinteto ofensivo es bueno en realidad. Curell es el único veterano de los cinco, y de ahí que el acorde no sea más eficaz. En cambio, sus cuatro compañeros tienen juventud, entusiasmo y buen juego. Nadie lo puede discutir. En la forma en que se encuentra la línea delantera boquense en la actualidad, no es mejor que su adversaria del domingo. Varallo y Morgada son dos hombres que saben de fútbol. Malianni tiene una visión clara del arco, y Díaz es otro muchacho de capacidad. Unido a su poderío, esa línea ha jugado en este campeonato con el aliciente que significó para ella la posibilidad de salir campeón.
+
+                .row.nopadding-xs
+                    .col-xs-24
+                        .nota__image
+                            img.img-responsive(src='https://picsum.photos/1920/1080/')
+                .row
+                    .col-xs-24.col-sm-16.col-sm-offset-4
+                        p.nota__text Con más defensa e igual línea de ataque, aunque más veloz, la platense; provocando mayor número de situaciones peligrosas en el área penal enemiga, Boca perdió. En ello intervino la suerte, no lo negaremos. Pero no se puede decir que Gimnasia y Esgrima se ha clasificado campeón de casualidad Se puede ganar un partido de suerte, pero , no es posible llegar a una final si no se ha acreditado condiciones para ello. El año pasado, cuando Huracán ganó, fue  porque demostró que podía hacerlo. Alentados sus hombres por la posibilidad de la victoria, se multiplicaron en el esfuerzo, y cuando vencieron a Boca por tres tantos a uno, después de haber terminado el primer tiempo con uno a cero en contra, estaban habilitados para vencer a cualquier team que se presentara. Ese día Huracán era el campeón que después llegó a ser. Cuando San Lorenzo obtuvo igual triunfo en el campeonato de 1927, había demostrado durante su larga campaña méritos para serlo. No fue una casualidad, como tampoco lo es en este caso el hecho de que Gimnasia y Esgrima, un club que el año pasado sufrió serios contrastes, haya llegado a la final. Cherro en un entrevero, el forward boquense realizó una performance superior a vvvttttlas que cumpliera últimamente. La lógica no está en un partido, sino en una sucesión de partidos. Por alguna razón se encuentran siempre en los primeros puestos quienes son mejores.
+                        p.nota__text La defensa de Gimnasia no está a tono con la línea de forwards. Scarpone, el veterano arquero, continúa siendo un elemento de valía y sabe asumir la dirección que desde su arco ejerce sobre sus compañeros, a quienes les señala el camino. Pero el quinteto ofensivo es bueno en realidad. Curell es el único veterano de los cinco, y de ahí que el acorde no sea más eficaz. En cambio, sus cuatro compañeros tienen juventud, entusiasmo y buen juego. Nadie lo puede discutir. En la forma en que se encuentra la línea delantera boquense en la actualidad, no es mejor que su adversaria del domingo. Varallo y Morgada son dos hombres que saben de fútbol. Malianni tiene una visión clara del arco, y Díaz es otro muchacho de 
+        section.nota__social
+            .container
+                .row
+                    .col-xs-24.col-sm-16.col-sm-offset-4
+                        ul.nota__social__networks
+                            li
+                                a
+                                    i.fa.fa-instagram
+                            li
+                                a
+                                    i.fa.fa-facebook
+                            li
+                                a
+                                    i.fa.fa-twitter
+                        .nota__themes
+                            h3.nota__themes__title Temas en esta nota:
+                            ul.nota__themes__options
+                                li 
+                                    a Seleccion Argentina
+                                li 
+                                    a Mundial
+                                li 
+                                    a Alemania
+                                li 
+                                    a Suecia
+        section.nota__ads
+            .container
+                .row
+                    .col-xs-24
+                        +ads('leaderboard', '/images/ads/flow.jpg')
+        section.nota__related
+            .container
+                .row
+                    .col-xs-24
+                        h2.nota__related__title 
+                            span TAMBIEN TE PUEDE INTERESAR
+                            i
+                .row.-flexrow
+                    each article in site.data.home.main
+                        .col-xs-24.col-sm-12.col-md-8
+                            +article('cover', article, '', false, false, false)
+        section.nota__ads
+            .container
+                .row
+                    .col-xs-24
+                        +ads('leaderboard', '/images/ads/flow.jpg')
+        section.nota__fotos
+            .container
+                .row
+                    .col-xs-24
+                        .nota__fotos__title
+                            span Las fotos de el Gráfico
+                            i
+                    .col-xs-24
+                        +article('picleft', {}, 'gray', false, false, false)
+                    .col-xs-24
+                        +article('picright', {}, '', false, false, false)
+                    .col-xs-24
+                        +article('picleft', {}, 'gray', false, false, false)
+        section.nota__comments
+            h2.nota__comments__title
+                span DEJÁ TU COMENTARIO
+                i
+            .facebook__plugin
+        section.nota__ads
+            .container
+                .row
+                    .col-xs-24
+                        +ads('leaderboard', '/images/ads/flow.jpg')
+        
+        

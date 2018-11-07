@@ -404,6 +404,7 @@
         }
 
         & + main {
+            padding-top: 50px;
             @include mq(md){
                 padding-top: 85px;
             }

@@ -14743,15 +14743,80 @@ module.exports = Header;
 'use strict';
 
 // Constructor
+var Modal = function() {
+    var modal = $('.eg-modal');
+
+    if (modal) {
+        var modalTriggers = $('[data-modal]');
+        modalTriggers.on('click', function() {
+            var actionType = $(this).data('modal');
+
+            if (actionType === 'open') {
+                openModal();
+            } else {
+                closeModal();
+            }
+        });
+
+        function openModal() {
+            modal.addClass('-open');
+            $('body').addClass('-hideOverflow');
+        }
+
+        function closeModal() {
+            modal.removeClass('-open');
+            $('body').removeClass('-hideOverflow');
+        }
+    }
+};
+
+module.exports = Modal;
+
+},{}],7:[function(require,module,exports){
+'use strict';
+
+// Constructor
 var Slider = function() {
     var slider = $('._slider');
+    var sliderMulti = $('._slidermulti');
     if (slider) {
         slider.each(function(){
             $(this).slick({
                 dots: true,
                 fade: true,
-                arrows:  false,
+                arrows:  true,
                 autoplay: true
+            });
+        });
+    }
+    if (sliderMulti) {
+        sliderMulti.each(function(){
+            $(this).slick({
+                dots: true,
+                infinite: true,
+                speed: 600,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                centerMode: true,
+                autoplay: true,
+                responsive: [
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            centerMode: true,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            centerMode: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
             });
         });
     }
@@ -14759,7 +14824,7 @@ var Slider = function() {
 
 module.exports = Slider;
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 (function (global){
 // Main javascript entry point
 // Should handle bootstrapping/starting application
@@ -14770,6 +14835,7 @@ global.$ = global.jQuery = require('jquery');
 global._ = require('underscore');
 var Header = require('../_modules/header/header');
 var Slider = require('../_modules/slider/slider');
+var Modal = require('../_modules/modal/modal');
 
 $(function() {
     require('../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min');
@@ -14777,10 +14843,11 @@ $(function() {
 
     new Header();
     new Slider();
+    new Modal();
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min":1,"../../bower_components/slick-carousel/slick/slick":2,"../_modules/header/header":5,"../_modules/slider/slider":6,"jquery":3,"underscore":4}]},{},[7])
+},{"../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min":1,"../../bower_components/slick-carousel/slick/slick":2,"../_modules/header/header":5,"../_modules/modal/modal":6,"../_modules/slider/slider":7,"jquery":3,"underscore":4}]},{},[8])
 
 //# sourceMappingURL=main.js.map

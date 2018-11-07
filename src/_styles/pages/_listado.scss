@@ -1,0 +1,42 @@
+.listado {
+    &__hero{
+        background: $lightestGray;
+        @include padd(both, half);
+        &__title {
+            @include sectionTitle()
+        }
+    }
+
+    &__more {
+        text-align: center;
+
+        &__button {
+            height: 35px;
+            max-width: 400px;
+            margin-top: 20px;
+            background: $mainColor;
+            color: $white;
+            font-family: $altFont;
+            margin-bottom: 25px;
+            line-height: 35px;
+            display: inline-block;
+            padding: 0 10px;
+            text-transform: uppercase;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @include mq(md) {
+                padding: 0 30px;
+            }
+
+        }
+    }
+
+    &__ads {
+        @include padd(both, half);
+
+        @include mq(xs) {
+            display: none;
+        }
+    }
+}

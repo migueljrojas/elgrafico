@@ -1,0 +1,15 @@
+.sidebar {
+
+    &__ads {
+        background: $lightestGray;
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    &__articles {
+        &__title {
+            @include sectionTitle($align:left);
+        }
+    }
+}
