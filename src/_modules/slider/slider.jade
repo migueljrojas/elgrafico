@@ -3,7 +3,13 @@ mixin slider(klass, mode)
         ._slidermulti(class=klass)
             if block
                 block
-    else
+    
+    if mode == 'cover'
+        ._slidercover(class=klass)
+            if block
+                block
+
+    if !mode
         ._slider(class=klass)
             if block
                 block

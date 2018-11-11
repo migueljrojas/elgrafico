@@ -1,0 +1,130 @@
+extends ../_layouts/base
+
+include ../_modules/ads/ads
+include ../_modules/slider/slider
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.buscador-tapas
+    
+        section.buscador-tapas__search
+            .container
+                .row
+                    .col-xs-24
+                        form.buscador-tapas__search__container
+                            .buscador-tapas__search__types
+                                .buscador-tapas__search__type
+                                    input(type='radio', id='all', name='covertype')
+                                    label(for='all') todas las tapas
+                                .buscador-tapas__search__type
+                                    input(type='radio', id='printed', name='covertype')
+                                    label(for='printed') edicion impresa
+                                .buscador-tapas__search__type
+                                    input(type='radio', id='special', name='covertype')
+                                    label(for='special') especiales
+                                .buscador-tapas__search__type
+                                    input(type='radio', id='polo', name='covertype')
+                                    label(for='polo') polo
+
+                            .buscador-tapas__search__date-range    
+                                .buscador-tapas__search__date-range__container
+                                    input.buscador-tapas__search__date-range__bar.buscador-tapas__search__date-range__bar--left(type='Range')
+                                    input.buscador-tapas__search__date-range__bar.buscador-tapas__search__date-range__bar--right(type='Range')
+
+                                .buscador-tapas__search__date-range__container
+                                    input.buscador-tapas__search__date-range__bar.buscador-tapas__search__date-range__bar--left(type='Range')
+                                    input.buscador-tapas__search__date-range__bar.buscador-tapas__search__date-range__bar--right(type='Range')
+
+                            .buscador-tapas__search__search-form
+                                input.buscador-tapas__search__search-form__text(type='text' placeholder="palabra Clave (Ej.Messi)")
+                                input.buscador-tapas__search__search-form__number(type='number' placeholder='N° de edición')
+                                button.buscador-tapas__search__search-form__button Buscar
+        
+        section.buscador-tapas__highlight
+            .buscador-tapas__highlight__container
+                .buscador-tapas__highlight__title 
+                    span destacadas de la semana
+                    i
+                .buscador-tapas__highlight__wrapper
+                    +slider('buscador-tapas__highlight__slider', 'cover')
+                        each item in site.data.tapas
+                            .buscador-tapas__highlight__slide
+                                .buscador-tapas__cover
+                                    .buscador-tapas__cover__image
+                                        img(src=item.tapa)
+                                    .buscador-tapas__cover__date
+                                        span=item.date
+        .buscador-tapas__ads
+            +ads('leaderboard', '/images/ads/flow.jpg')
+                
+        section.buscador-tapas__gallery
+            .container
+                .row
+                    .col-xs-24
+                        .buscador-tapas__gallery__title
+                            span Busqueda por decadas
+                            i
+                .row
+                    .col-xs-24
+                        .buscador-tapas__gallery__selectors
+                            each item in site.data.decadeSelectors
+                                .buscador-tapas__gallery__selector
+                                    input(type='radio', id=item.id, name='covertype')
+                                    label(for=item.id)=item.label
+                .row
+                    .col-xs-12.col-sm-8.col-md-6
+                        .buscador-tapas__cover
+                            .buscador-tapas__cover__image
+                                img(src='https://picsum.photos/1240/700/')
+                            .buscador-tapas__cover__date
+                                span 2 de Mayo de 1958
+                    .col-xs-12.col-sm-8.col-md-6
+                        .buscador-tapas__cover
+                            .buscador-tapas__cover__image
+                                img(src='https://picsum.photos/1240/700/')
+                            .buscador-tapas__cover__date
+                                span 2 de Mayo de 1958
+                    .col-xs-12.col-sm-8.col-md-6
+                        .buscador-tapas__cover
+                            .buscador-tapas__cover__image
+                                img(src='https://picsum.photos/1240/700/')
+                            .buscador-tapas__cover__date
+                                span 2 de Mayo de 1958
+                    .col-xs-12.col-sm-8.col-md-6
+                        .buscador-tapas__cover
+                            .buscador-tapas__cover__image
+                                img(src='https://picsum.photos/1240/700/')
+                            .buscador-tapas__cover__date
+                                span 2 de Mayo de 1958
+                    .col-xs-12.col-sm-8.col-md-6
+                        .buscador-tapas__cover
+                            .buscador-tapas__cover__image
+                                img(src='https://picsum.photos/1240/700/')
+                            .buscador-tapas__cover__date
+                                span 2 de Mayo de 1958
+                    .col-xs-12.col-sm-8.col-md-6
+                        .buscador-tapas__cover
+                            .buscador-tapas__cover__image
+                                img(src='https://picsum.photos/1240/700/')
+                            .buscador-tapas__cover__date
+                                span 2 de Mayo de 1958
+                    .col-xs-12.col-sm-8.col-md-6
+                        .buscador-tapas__cover
+                            .buscador-tapas__cover__image
+                                img(src='https://picsum.photos/1240/700/')
+                            .buscador-tapas__cover__date
+                                span 2 de Mayo de 1958
+                    .col-xs-12.col-sm-8.col-md-6
+                        .buscador-tapas__cover
+                            .buscador-tapas__cover__image
+                                img(src='https://picsum.photos/1240/700/')
+                            .buscador-tapas__cover__date
+                                span 2 de Mayo de 1958
+                    .col-xs-24
+                            button.buscador-tapas__gallery__show-more-button ver mas tapas
+        .buscador-tapas__ads
+            +ads('leaderboard', '/images/ads/flow.jpg')
+                             
