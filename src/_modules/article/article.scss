@@ -63,6 +63,13 @@
         }
     }
 
+    &--bigcover {
+        #{$a}__img {
+            @include img(40%);
+            margin-bottom: -7%;
+        }
+    }
+
     &--cover {
         #{$a}__data {
             width: 90%;

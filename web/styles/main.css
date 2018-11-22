@@ -15202,6 +15202,47 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   display: block;
 }
 
+@supports (--css: variables) {
+  input[type="range"].multirange {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+  }
+  input[type="range"].multirange.original {
+    position: absolute;
+  }
+  input[type="range"].multirange.original::-webkit-slider-thumb {
+    position: relative;
+    z-index: 2;
+  }
+  input[type="range"].multirange.original::-moz-range-thumb {
+    transform: scale(1);
+    /* FF doesn't apply position it seems */
+    z-index: 1;
+  }
+  input[type="range"].multirange::-moz-range-track {
+    border-color: transparent;
+    /* needed to switch FF to "styleable" control */
+  }
+  input[type="range"].multirange.ghost {
+    position: relative;
+    height: 5px;
+    background: var(--track-background);
+    --track-background: linear-gradient(to right,
+				transparent var(--low), var(--range-color) 0,
+				var(--range-color) var(--high), transparent 0
+			) no-repeat 0 45% / 100% 50%;
+    --range-color: #e1161c;
+  }
+  input[type="range"].multirange.ghost::-webkit-slider-runnable-track {
+    background: var(--track-background);
+  }
+  input[type="range"].multirange.ghost::-moz-range-track {
+    background: var(--track-background);
+  }
+}
+
 .-hide {
   display: none !important;
 }
@@ -16256,6 +16297,20 @@ button._button {
   border-left: 1px solid #ebebeb;
 }
 
+.article--bigcover .article__img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 40%;
+  height: 0;
+  margin-bottom: -7%;
+}
+
+.article--bigcover .article__img img {
+  position: absolute;
+  width: 100%;
+}
+
 .article--cover .article__data {
   width: 90%;
   padding: 5%;
@@ -16580,7 +16635,6 @@ button._button {
 }
 
 .sidebar__ads {
-  background: #f4f7f8;
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
@@ -16691,6 +16745,8 @@ button._button {
   -webkit-box-shadow: 0 1px 1px #999;
           box-shadow: 0 1px 1px #999;
   border-radius: 7px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .searchbox__input {
@@ -16733,6 +16789,11 @@ button._button {
   line-height: 35px;
   display: inline-block;
   padding: 0 10px;
+  cursor: pointer;
+}
+
+.show-more:hover {
+  color: #fff;
 }
 
 @media (min-width: 992px) {
@@ -16838,7 +16899,6 @@ button._button {
 .home__ads {
   padding-top: 2%;
   padding-bottom: 2%;
-  background: #f4f7f8;
 }
 
 .home__main-articles {
@@ -17023,7 +17083,6 @@ button._button {
 }
 
 .home__sidebar__ads {
-  background: #f4f7f8;
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
@@ -17098,12 +17157,84 @@ button._button {
 .home__tapas {
   background: #000;
   padding: 40px 0;
+  color: #fff;
 }
 
 @media (min-width: 992px) {
   .home__tapas {
     padding: 60px 0;
   }
+}
+
+.home__tapas__cover {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 135%;
+  height: 0;
+}
+
+.home__tapas__cover img {
+  position: absolute;
+  width: 100%;
+}
+
+.home__tapas__cover img {
+  height: 100%;
+  width: auto;
+}
+
+.home__tapas__heading {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home__tapas__section {
+  font-family: "Fjalla One", sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.home__tapas__link {
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-family: "Roboto Slab", sans-serif;
+}
+
+.home__tapas__title {
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 2em;
+  margin: 0 0 10px;
+}
+
+.home__tapas__date {
+  color: #e1161c;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 24px;
+}
+
+.home__tapas__body {
+  margin-bottom: 40px;
+}
+
+.home__tapas .buscador-tapas__search__type label {
+  background: #787871;
+}
+
+.home__tapas .buscador-tapas__search__date-range__bar::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #212121;
 }
 
 .home__latapa {
@@ -17166,7 +17297,6 @@ button._button {
 
 .home__latapa__ads {
   padding: 10px;
-  background: #f4f7f8;
 }
 
 .home__videos {
@@ -17500,6 +17630,12 @@ button._button {
   }
 }
 
+@media (min-width: 1400px) and (max-width: 1920px) {
+  .nota__hero__image {
+    padding-bottom: 35%;
+  }
+}
+
 .nota__hero__heading {
   padding: 15px;
   text-align: center;
@@ -17754,7 +17890,6 @@ button._button {
 }
 
 .nota__sidebar__ads {
-  background: #f4f7f8;
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
@@ -18265,28 +18400,10 @@ button._button {
 
 .multimedia__search {
   background: #f4f7f8;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 8%;
-  padding-bottom: 8%;
-}
-
-@media (min-width: 768px) {
-  .multimedia__search {
-    padding-top: 6%;
-    padding-bottom: 6%;
-  }
-}
-
-@media (min-width: 992px) {
-  .multimedia__search {
-    padding-top: 4%;
-    padding-bottom: 4%;
-  }
+  padding: 40px;
 }
 
 .multimedia__video-single {
@@ -18420,7 +18537,7 @@ button._button {
   line-height: 1;
   text-transform: uppercase;
   color: #000;
-  margin-bottom: 0;
+  margin-bottom: 40px;
   font-size: 21px;
 }
 
@@ -18538,18 +18655,21 @@ button._button {
 }
 
 .multimedia__videos {
-  padding-bottom: 16%;
+  padding-top: 8%;
+  padding-bottom: 8%;
 }
 
 @media (min-width: 768px) {
   .multimedia__videos {
-    padding-bottom: 12%;
+    padding-top: 6%;
+    padding-bottom: 6%;
   }
 }
 
 @media (min-width: 992px) {
   .multimedia__videos {
-    padding-bottom: 8%;
+    padding-top: 4%;
+    padding-bottom: 4%;
   }
 }
 
@@ -18698,6 +18818,790 @@ button._button {
   .multimedia__most-viewed-videos__more-button {
     padding-top: 4%;
   }
+}
+
+.multimedia__most-viewed-videos__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.multimedia__most-viewed-videos__col .article--video {
+  margin-bottom: 0;
+  width: 50%;
+}
+
+.multimedia__most-viewed-videos__col:nth-child(even) .article__img {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.multimedia__most-viewed-videos__col:nth-child(even) .article__data {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.multimedia__most-viewed-videos__col:nth-child(even) .article__data:before {
+  left: 100%;
+  right: auto;
+  border-left: 10px solid #f4f7f8;
+  border-right: none;
+}
+
+.buscador-tapas {
+  padding-bottom: 16%;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas {
+    padding-bottom: 12%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas {
+    padding-bottom: 8%;
+  }
+}
+
+.buscador-tapas__search {
+  background: #f4f7f8;
+}
+
+.buscador-tapas__search__container {
+  padding-top: 8%;
+  padding-bottom: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__search__container {
+    padding-top: 6%;
+    padding-bottom: 6%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__search__container {
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+}
+
+.buscador-tapas__search__types {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.buscador-tapas__search__type {
+  width: 24%;
+}
+
+.buscador-tapas__search__type input[type='radio'] {
+  position: absolute;
+  left: -9000px;
+  visibility: hidden;
+}
+
+.buscador-tapas__search__type input[type='radio']:checked + label {
+  background: #e1161c;
+  color: #fff;
+}
+
+.buscador-tapas__search__type label {
+  -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  font-size: 12px;
+  min-height: 40px;
+  background: #ebebeb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Fjalla One", sans-serif;
+  cursor: pointer;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__search__type label {
+    font-size: 16px;
+  }
+}
+
+.buscador-tapas__search__date-range {
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__search__date-range {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.buscador-tapas__search__date-range__container {
+  padding-top: 50px;
+  padding-bottom: 30px;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: -webkit-calc(100% - 20px);
+  width: calc(100% - 20px);
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__search__date-range__container {
+    width: 46%;
+  }
+}
+
+.buscador-tapas__search__date-range__container input[type=range] {
+  -webkit-appearance: none;
+}
+
+.buscador-tapas__search__date-range__container input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.buscador-tapas__search__date-range__container input[type=range]:focus {
+  outline: none;
+}
+
+.buscador-tapas__search__date-range__bar-wrapper {
+  position: absolute;
+  left: -10px;
+  right: -10px;
+}
+
+.buscador-tapas__search__date-range__bar::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: #fff;
+  cursor: pointer;
+  margin-top: -10px;
+  -webkit-box-shadow: 1px 2px 2px #999;
+          box-shadow: 1px 2px 2px #999;
+}
+
+.buscador-tapas__search__date-range__bar::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #ebebeb;
+}
+
+.buscador-tapas__search__date-range__label {
+  position: absolute;
+  top: 0;
+  width: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buscador-tapas__search__date-range__label span {
+  position: absolute;
+  border-radius: 5px;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  background: #fff;
+  color: #e1161c;
+  text-transform: uppercase;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 300;
+}
+
+.buscador-tapas__search__date-range__label span:before {
+  content: '';
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 100%;
+  border-top: 5px solid #fff;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.buscador-tapas__search__date-range__year {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 45%;
+}
+
+.buscador-tapas__search__search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__search__search-form {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.buscador-tapas__search__search-form__input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50px;
+  padding: 0 10px;
+  background: #fff;
+  border: none;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__search__search-form__input {
+    width: 35%;
+  }
+}
+
+.buscador-tapas__search__search-form__submit {
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  background: #e1161c;
+  color: #fff;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__search__search-form__submit {
+    width: 25%;
+  }
+}
+
+.buscador-tapas__search__search-form__button {
+  background: #e1161c;
+  border: none;
+  padding: 2.5%;
+  width: 20%;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+}
+
+.buscador-tapas__ads {
+  padding-top: 8%;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__ads {
+    padding-top: 6%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__ads {
+    padding-top: 4%;
+  }
+}
+
+.buscador-tapas__highlight__container {
+  padding-top: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__highlight__container {
+    padding-top: 6%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__highlight__container {
+    padding-top: 4%;
+  }
+}
+
+.buscador-tapas__highlight__title {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 28px;
+  text-align: center;
+  margin: 0 0 30px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.buscador-tapas__highlight__title span {
+  display: block;
+  margin-bottom: -10px;
+}
+
+.buscador-tapas__highlight__title i {
+  width: 100px;
+  height: 5px;
+  background: #e1161c;
+  display: inline-block;
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__highlight__title {
+    font-size: 36px;
+  }
+}
+
+.buscador-tapas__highlight__slider .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.buscador-tapas__highlight__slider .slick-list {
+  min-height: 70vh;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__highlight__slider .slick-list {
+    min-height: 60vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__highlight__slider .slick-list {
+    min-height: 75vh;
+  }
+}
+
+@media (min-width: 1200px) {
+  .buscador-tapas__highlight__slider .slick-list {
+    min-height: 73vh;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1920px) {
+  .buscador-tapas__highlight__slider .slick-list {
+    min-height: 67vh;
+  }
+}
+
+.buscador-tapas__highlight__slider .slick-dots {
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.buscador-tapas__highlight__slider .slick-dots li, .buscador-tapas__highlight__slider .slick-dots li.slick-active {
+  margin: 0;
+}
+
+.buscador-tapas__highlight__slider .slick-dots li button:before, .buscador-tapas__highlight__slider .slick-dots li.slick-active button:before {
+  color: #e1161c;
+}
+
+.buscador-tapas__highlight__slider .slick-slide {
+  -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  opacity: 0.7;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  -webkit-transform: translateY(3%) scale3d(0.8, 0.8, 0.8) !important;
+          transform: translateY(3%) scale3d(0.8, 0.8, 0.8) !important;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__highlight__slider .slick-slide {
+    -webkit-transform: translateY(25%) scale3d(1, 1, 1) !important;
+            transform: translateY(25%) scale3d(1, 1, 1) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__highlight__slider .slick-slide {
+    -webkit-transform: translateY(15%) scale3d(0.8, 0.8, 0.8) !important;
+            transform: translateY(15%) scale3d(0.8, 0.8, 0.8) !important;
+  }
+}
+
+.buscador-tapas__highlight__slider .slick-current {
+  opacity: 1;
+  -webkit-transform: translateY(4%) !important;
+          transform: translateY(4%) !important;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__highlight__slider .slick-current {
+    -webkit-transform: translateY(6%) scale3d(1.6, 1.6, 1.6) !important;
+            transform: translateY(6%) scale3d(1.6, 1.6, 1.6) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__highlight__slider .slick-current {
+    -webkit-transform: translateY(6%) scale3d(1.4, 1.4, 1.4) !important;
+            transform: translateY(6%) scale3d(1.4, 1.4, 1.4) !important;
+  }
+}
+
+.buscador-tapas__highlight__slider .slick-current .buscador-tapas__cover__image {
+  -webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+.buscador-tapas__highlight__slider .slick-current .multimedia__video__heading,
+.buscador-tapas__highlight__slider .slick-current .multimedia__video__data {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.buscador-tapas__highlight__slider .slick-current .multimedia__video__placeholder {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.buscador-tapas__highlight__slider .slick-current .multimedia__video__social {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.buscador-tapas__highlight__slider .slick-current .multimedia__video__player .embed-responsive {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.buscador-tapas__highlight__slider .slick-prev,
+.buscador-tapas__highlight__slider .slick-next {
+  top: 75%;
+}
+
+.buscador-tapas__highlight__slider .slick-prev {
+  left: 30%;
+}
+
+.buscador-tapas__highlight__slider .slick-next {
+  right: 30%;
+}
+
+.buscador-tapas__highlight__image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 56.5%;
+  height: 0;
+}
+
+.buscador-tapas__highlight__image img {
+  position: absolute;
+  width: 100%;
+}
+
+.buscador-tapas__highlight__placeholder {
+  padding: 20px;
+}
+
+.buscador-tapas__gallery {
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__gallery {
+    padding-top: 6%;
+    padding-bottom: 6%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__gallery {
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+}
+
+.buscador-tapas__gallery__title {
+  font-family: "Fjalla One", sans-serif;
+  font-size: 28px;
+  text-align: center;
+  margin: 0 0 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  padding-bottom: 8%;
+  margin-bottom: 0;
+}
+
+.buscador-tapas__gallery__title span {
+  display: block;
+  margin-bottom: -10px;
+}
+
+.buscador-tapas__gallery__title i {
+  width: 100px;
+  height: 5px;
+  background: #e1161c;
+  display: inline-block;
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__gallery__title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__gallery__title {
+    padding-bottom: 6%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__gallery__title {
+    padding-bottom: 4%;
+  }
+}
+
+.buscador-tapas__gallery__selectors {
+  padding-bottom: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__gallery__selectors {
+    padding-bottom: 6%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__gallery__selectors {
+    padding-bottom: 4%;
+  }
+}
+
+.buscador-tapas__gallery__selector {
+  cursor: pointer;
+}
+
+.buscador-tapas__gallery__selector input[type='radio'] {
+  position: absolute;
+  left: -9000px;
+  visibility: hidden;
+}
+
+.buscador-tapas__gallery__selector input[type='radio']:checked + label {
+  background: #e1161c;
+  color: #fff;
+}
+
+.buscador-tapas__gallery__selector label {
+  -webkit-transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  font-size: 12px;
+  display: block;
+  background: #ebebeb;
+  padding: 3px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Fjalla One", sans-serif;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.buscador-tapas__gallery__show-more-button {
+  display: block;
+  background: #e1161c;
+  border: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Fjalla One", sans-serif;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__gallery__show-more-button {
+    width: 200px;
+  }
+}
+
+.buscador-tapas__cover {
+  padding-bottom: 16%;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__cover {
+    padding-bottom: 12%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__cover {
+    padding-bottom: 8%;
+  }
+}
+
+.buscador-tapas__cover__image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 135%;
+  height: 0;
+  margin-bottom: 10px;
+}
+
+.buscador-tapas__cover__image img {
+  position: absolute;
+  width: 100%;
+}
+
+.buscador-tapas__cover__image img {
+  height: 100%;
+  width: auto;
+}
+
+.buscador-tapas__cover__date {
+  font-family: "Fjalla One", sans-serif;
+}
+
+.buscador-tapas__single-cover {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 8%;
+}
+
+@media (min-width: 768px) {
+  .buscador-tapas__single-cover {
+    padding-top: 6%;
+  }
+}
+
+@media (min-width: 992px) {
+  .buscador-tapas__single-cover {
+    padding-top: 4%;
+  }
+}
+
+.buscador-tapas__single-cover__edition {
+  font-family: "Roboto Slab", sans-serif;
+  color: #e1161c;
+  font-weight: 700;
+}
+
+.buscador-tapas__single-cover__date {
+  padding-bottom: 20px;
+}
+
+.buscador-tapas__single-cover__image-wrapper {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buscador-tapas__single-cover__image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 135%;
+  height: 0;
+  margin-bottom: 10px;
+}
+
+.buscador-tapas__single-cover__image img {
+  position: absolute;
+  width: 100%;
+}
+
+.buscador-tapas__single-cover__image img {
+  width: auto;
+  height: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.buscador-tapas__single-cover__title {
+  font-size: 22px;
+}
+
+.buscador-tapas__single-cover__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.buscador-tapas__single-cover__social li {
+  padding: 0 10px;
+}
+
+.buscador-tapas__single-cover__social i {
+  color: #000;
 }
 
 *,

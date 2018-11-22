@@ -1,5 +1,6 @@
 .buscador-tapas {
     @include padd(bottom);
+
     &__search {
         background: $lightestGray;
 
@@ -11,13 +12,12 @@
         }
 
         &__types {
-
             display: flex;
             justify-content: space-between;
         }
 
         &__type {
-            width: 20%;
+            width: 24%;
 
             input[type='radio'] {
                 position: absolute;
@@ -35,29 +35,47 @@
             label {
                 @include trans;
 
-                font-size: 14px;
-                display: block;
+                font-size: 12px;
+                min-height: 40px;
                 background: $lightGray;
-                padding: 2% 0;
+                display: flex;
+                padding: 3px 5px;
                 text-align: center;
                 text-transform: uppercase;
                 font-family: $menuFont;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+
+                @include mq(md) {
+                    font-size: 16px;
+                }
             }
         }
 
         &__date-range {
-            @include padd(both, half);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding-top: 20px;
+
+            @include mq(sm) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
             &__container {
-                width: 45%;
+                padding-top: 50px;
+                padding-bottom: 30px;
+                position: relative;
+                margin-left: 10px;
+                margin-right: 10px;
+                width: calc(100% - 20px);
+
+                @include mq(sm) {
+                    width: 46%;
+                }
 
                 input[type=range] {
                     -webkit-appearance: none;
-                    width: 100%;
-                    background: transparent;
                 }
 
                 input[type=range]::-webkit-slider-thumb {
@@ -67,25 +85,15 @@
                 input[type=range]:focus {
                     outline: none;
                 }
+            }
 
-                input[type=range]::-ms-track {
-                    width: 100%;
-                    cursor: pointer;
-                    background: transparent;
-                    border-color: transparent;
-                    color: transparent;
-                }
+            &__bar-wrapper {
+                position: absolute;
+                left: -10px;
+                right: -10px;
             }
 
             &__bar {
-                &--right {
-                    margin-top: -5px;
-                }
-
-                &--left {
-
-                }
-
                 &::-webkit-slider-thumb {
                     width: 20px;
                     height: 20px;
@@ -97,8 +105,43 @@
                 }
 
                 &::-webkit-slider-runnable-track {
-                    height: 5px;
-                    background: transparent;
+                    height: 6px;
+                    background: $lightGray;
+                }
+            }
+
+            &__label {
+                position: absolute;
+                top: 0;
+                width: 0;
+                display: flex;
+                justify-content: center;
+
+                span {
+                    position: absolute;
+                    border-radius: 5px;
+                    display: inline-block;
+                    height: 30px;
+                    line-height: 30px;
+                    padding: 0 10px;
+                    background: $white;
+                    color: $mainColor;
+                    text-transform: uppercase;
+                    font-family: $altFont;
+                    font-weight: 300;
+
+                    &:before {
+                        content: '';
+                        left:50%;
+                        transform: translateX(-50%);
+                        width: 5px;
+                        height: 5px;
+                        position: absolute;
+                        top: 100%;
+                        border-top: 5px solid $white;
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                    }
                 }
             }
 
@@ -110,21 +153,38 @@
 
         &__search-form {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: flex-end;
 
-            input {
-                padding: 2.5%;
-                box-shadow: 1px 2px 2px $midGray;
-                border-radius: 10px;
+            @include mq(sm) {
+                justify-content: space-between;
+            }
+
+            &__input {
+                display: flex;
+                height: 50px;
+                padding: 0 10px;
+                background: $white;
                 border: none;
+                width: 100%;
+                margin-bottom: 10px;
+
+                @include mq(sm) {
+                    width: 35%;
+                }
             }
 
-            &__text {
-                width: 50%;
-            }
+            &__submit {
+                height: 50px;
+                line-height: 50px;
+                width: 100%;
+                background: $mainColor;
+                color: $white;
+                border: none;
 
-            &__number {
-                width: 20%;
+                @include mq(sm) {
+                    width: 25%;
+                }
             }
 
             &__button {
@@ -139,10 +199,14 @@
         }
     }
 
+    &__ads {
+        @include padd(top, half);
+    }
+
     &__highlight {
 
         &__container {
-            @include padd(both, half);
+            @include padd(top, half);
             display: flex;
             flex-direction: column;
         }
@@ -157,14 +221,37 @@
                 display: flex;
             }
 
-            .slick-dots {
-                bottom: -40px;
+            .slick-list {
+                min-height: 70vh;
 
-                @include mq(md) {
-                    display: none !important;
+                @include mq(sm) {
+                    min-height: 60vh;
                 }
 
-                li, .slick-active {
+                @include mq(md) {
+                    min-height: 75vh;
+                }
+
+                @include mq(lg) {
+                    min-height: 73vh;
+                }
+
+                @include customMq(1400px) {
+                    min-height: 67vh;
+                }
+            }
+
+            .slick-dots {
+                bottom: 0;
+                left: 0;
+                transform: translateX(0);
+                display: flex;
+                justify-content: center;
+                width: 100%;
+
+                li, li.slick-active {
+                    margin: 0;
+
                     button:before {
                         color: $red;
                     }
@@ -173,32 +260,37 @@
 
             .slick-slide {
                 @include trans;
-                flex-shrink: 2;
+                opacity: 0.7;
                 border-left: 1px solid $white;
                 border-right: 1px solid $white;
+                transform: translateY(3%) scale3d(0.8,0.8,0.8) !important;
+
+                @include mq(sm) {
+                    transform: translateY(25%)  scale3d(1,1,1) !important;
+                }
 
                 @include mq(md) {
-                    opacity: 0;
-                }
-            }
-
-            .slick-active {
-                opacity: .7;
-                &:not([role="presentation"]) {
-                    width: 15vw !important;
-                    transform: translateY(40%);
+                    transform: translateY(15%)  scale3d(.8,.8,.8) !important;
                 }
             }
 
             .slick-current {
                 opacity: 1;
-                width: 50vw !important;
-                flex-grow: 2;
-                flex-shrink: 0;
-                transform: translateY(0) !important;
+                transform: translateY(4%) !important;
+                transform-origin: top center;
+                position: relative;
+                z-index: 2;
+
+                @include mq(sm) {
+                    transform: translateY(6%) scale3d(1.6,1.6,1.6) !important;
+                }
 
                 @include mq(md) {
-                    width: 45vw !important;
+                    transform: translateY(6%) scale3d(1.4,1.4,1.4) !important;
+                }
+
+                .buscador-tapas__cover__image {
+                    box-shadow: 0 0 20px 5px rgba(0,0,0,.2);
                 }
 
                 .multimedia__video__heading,
@@ -227,22 +319,16 @@
 
             .slick-prev,
             .slick-next {
-                top: 80%;
+                top: 75%;
             }
 
             .slick-prev {
-                left: 20%;
+                left: 30%;
             }
 
             .slick-next {
-                right: 20%;
+                right: 30%;
             }
-        }
-
-
-        &__slide {
-            // position: relative;
-            // padding: 0 15px;
         }
 
         &__image {
@@ -260,20 +346,21 @@
 
         &__title {
             @include sectionTitle;
+            @include padd(bottom, half);
 
             margin-bottom: 0;
         }
 
         &__selectors {
-            @include padd(both, half);
+            @include padd(bottom, half);
 
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         &__selector {
-            width: 9%;
-            margin: 0;
+            cursor: pointer;
 
             input[type='radio'] {
                 position: absolute;
@@ -294,24 +381,35 @@
                 font-size: 12px;
                 display: block;
                 background: $lightGray;
-                padding: 2% 0;
+                padding: 3px 5px;
                 text-align: center;
                 text-transform: uppercase;
                 font-family: $menuFont;
-                margin: 0;
+                margin: 5px;
+                cursor: pointer;
             }
         }
 
         &__show-more-button {
-            display: flex;
+            display: block;
             background: $red;
             border: none;
-            padding: .3% 2% 0 2%;
+            padding-left: 20px;
+            padding-right: 20px;
             text-transform: uppercase;
             color: $white;
             font-weight: 700;
             margin-left: auto;
             margin-right: auto;
+            font-family: $menuFont;
+            height: 30px;
+            line-height: 30px;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            @include mq(sm) {
+                width: 200px;
+            }
         }
     }
 
@@ -332,6 +430,63 @@
 
         &__date {
             font-family: $menuFont;
+        }
+    }
+
+    &__single-cover {
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        @include padd(top, half);
+
+        &__container {
+        }
+
+        &__edition {
+            font-family: $altFont;
+            color: $mainColor;
+            font-weight: 700;
+        }
+
+        &__date {
+            padding-bottom: 20px;
+        }
+
+        &__image-wrapper {
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__image {
+            @include img(135%);
+
+            margin-bottom: 10px;
+
+            img {
+                width: auto;
+                height: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &__title {
+            font-size: 22px;
+        }
+
+        &__social {
+            display: flex;
+            justify-content: center;
+
+            li {
+                padding: 0 10px;
+            }
+
+            i {
+                color: $black;
+            }
         }
     }
 }

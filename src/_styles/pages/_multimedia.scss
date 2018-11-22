@@ -1,9 +1,8 @@
 .multimedia {
     &__search {
         background: $lightestGray;
-        display: flex;
         justify-content: center;
-        @include padd(both, half);
+        padding: 40px;
     }
 
     &__video-single {
@@ -83,7 +82,7 @@
         &__section {
             @include sectionTitle;
             color: $black;
-            margin-bottom: 0;
+            margin-bottom: 40px;
 
             font-size: 21px;
 
@@ -162,7 +161,7 @@
     }
 
     &__videos {
-        @include padd(bottom);
+        @include padd(both, half);
 
         &__slider {
 
@@ -262,6 +261,36 @@
         &__more-button {
             @include padd(top, half);
             text-align: center;
+        }
+
+        &__col {
+            display: flex;
+
+            .article--video {
+                margin-bottom: 0;
+                width: 50%;
+            }
+
+            &:nth-child(odd) {
+                .article__data {
+                }
+            }
+
+            &:nth-child(even) {
+                .article__img {
+                    order: 2;
+                }
+                .article__data {
+                    order: 1;
+
+                    &:before {
+                        left: 100%;
+                        right: auto;
+                        border-left: 10px solid $lightestGray;
+                        border-right: none;
+                    }
+                }
+            }
         }
     }
 }

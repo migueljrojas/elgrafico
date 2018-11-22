@@ -1,42 +1,52 @@
 [
     {
         "id":"1920Decade",
-        "label":"1920 - 1929"
+        "label":"1920 - 1929",
+        "checked":"false"
     },
     {
         "id":"1930Decade",
-        "label":"1930 - 1939"
+        "label":"1930 - 1939",
+        "checked":"false"
     },
     {
         "id":"1940Decade",
-        "label":"1940 - 1949"
+        "label":"1940 - 1949",
+        "checked":"false"
     },
     {
         "id":"1950Decade",
-        "label":"1950 - 1959"
+        "label":"1950 - 1959",
+        "checked":"false"
     },
     {
         "id":"1960Decade",
-        "label":"1960 - 1969"
+        "label":"1960 - 1969",
+        "checked":"false"
     },
     {
         "id":"1970Decade",
-        "label":"1970 - 1979"
+        "label":"1970 - 1979",
+        "checked":"false"
     },
     {
         "id":"1980Decade",
-        "label":"1980 - 1989"
+        "label":"1980 - 1989",
+        "checked":"false"
     },
     {
         "id":"1990Decade",
-        "label":"1990 - 1999"
+        "label":"1990 - 1999",
+        "checked":"false"
     },
     {
         "id":"2000Decade",
-        "label":"2000 - 2009"
+        "label":"2000 - 2009",
+        "checked":"false"
     },
     {
         "id":"2010Decade",
-        "label":"2010 - 2018"
+        "label":"2010 - 2018",
+        "checked":"true"
     }
 ]

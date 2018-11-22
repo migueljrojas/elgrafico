@@ -14775,10 +14775,182 @@ module.exports = Modal;
 },{}],7:[function(require,module,exports){
 'use strict';
 
+var BuscadorTapas = function() {
+    if ($('input[type="range"]').length > 0) {
+        var monthInputRange = $('.js-range-month');
+        var yearInputRange = $('.js-range-year');
+        var monthLabelLow = $('.js-range-month-low');
+        var monthLabelHigh = $('.js-range-month-high');
+        var yearLabelLow = $('.js-range-year-low');
+        var yearLabelHigh = $('.js-range-year-high');
+        var monthInputFrom = $('#inputMonthFrom');
+        var monthInputTo = $('#inputMonthTo');
+        var yearInputFrom = $('#inputYearFrom');
+        var yearInputTo = $('#inputYearTo');
+        var monthLabels = [
+            'Ene',
+            'Feb',
+            'Mar',
+            'Abr',
+            'May',
+            'Jun',
+            'Jul',
+            'Ago',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dic'
+        ]
+
+        function updateMonthRangeValues() {
+            var monthInputValue = $('.js-range-month.original');
+
+            var valueLow = monthInputValue.get(0).valueLow;
+            var valueHigh = monthInputValue.get(0).valueHigh;
+
+            monthLabelLow.html('<span>' + monthLabels[valueLow] + '</span>');
+            monthLabelHigh.html('<span>' + monthLabels[valueHigh] + '</span>');
+
+            monthInputFrom.val(valueLow);
+            monthInputTo.val(valueHigh);
+
+            updateMonthLabelPosition(valueLow, valueHigh);
+        }
+
+        function updateMonthLabelPosition(low, high) {
+            monthLabelLow.css('left', (low * 100)/11 + '%');
+            monthLabelHigh.css('left', (high * 100)/11 + '%');
+        }
+
+        monthInputRange.on('input', updateMonthRangeValues);
+        updateMonthRangeValues();
+
+        function updateYearRangeValues() {
+            var yearInputValue = $('.js-range-year.original');
+            var baseYear = 1920;
+
+            var valueLow = yearInputValue.get(0).valueLow;
+            var valueHigh = yearInputValue.get(0).valueHigh;
+
+            yearLabelLow.html('<span>' + (baseYear + valueLow) + '</span>');
+            yearLabelHigh.html('<span>' + (baseYear + valueHigh) + '</span>');
+
+            yearInputFrom.val(baseYear + valueLow);
+            yearInputTo.val(baseYear + valueHigh);
+
+            updateYearLabelPosition(valueLow, valueHigh);
+        }
+
+        function updateYearLabelPosition(low, high) {
+            yearLabelLow.css('left', (low * 100)/98 + '%');
+            yearLabelHigh.css('left', (high * 100)/98 + '%');
+        }
+
+        yearInputRange.on('input', updateYearRangeValues);
+        updateYearRangeValues();
+    }
+}
+
+module.exports = BuscadorTapas;
+
+},{}],8:[function(require,module,exports){
+'use strict';
+
+var Multirange = function() {
+    var supportsMultiple = self.HTMLInputElement && "valueLow" in HTMLInputElement.prototype;
+
+    var descriptor = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value");
+
+    self.multirange = function(input) {
+    	if (supportsMultiple || input.classList.contains("multirange")) {
+    		return;
+    	}
+
+    	var value = input.getAttribute("value");
+    	var values = value === null ? [] : value.split(",");
+    	var min = +(input.min || 0);
+    	var max = +(input.max || 100);
+    	var ghost = input.cloneNode();
+
+    	input.classList.add("multirange", "original");
+    	ghost.classList.add("multirange", "ghost");
+
+    	input.value = values[0] || min + (max - min) / 2;
+    	ghost.value = values[1] || min + (max - min) / 2;
+
+    	input.parentNode.insertBefore(ghost, input.nextSibling);
+
+    	Object.defineProperty(input, "originalValue", descriptor.get ? descriptor : {
+    		// Fuck you Safari >:(
+    		get: function() { return this.value; },
+    		set: function(v) { this.value = v; }
+    	});
+
+    	Object.defineProperties(input, {
+    		valueLow: {
+    			get: function() { return Math.min(this.originalValue, ghost.value); },
+    			set: function(v) { this.originalValue = v; },
+    			enumerable: true
+    		},
+    		valueHigh: {
+    			get: function() { return Math.max(this.originalValue, ghost.value); },
+    			set: function(v) { ghost.value = v; },
+    			enumerable: true
+    		}
+    	});
+
+    	if (descriptor.get) {
+    		// Again, fuck you Safari
+    		Object.defineProperty(input, "value", {
+    			get: function() { return this.valueLow + "," + this.valueHigh; },
+    			set: function(v) {
+    				var values = v.split(",");
+    				this.valueLow = values[0];
+    				this.valueHigh = values[1];
+    				update();
+    			},
+    			enumerable: true
+    		});
+    	}
+
+    	if (typeof input.oninput === "function") {
+    		ghost.oninput = input.oninput.bind(input);
+    	}
+
+    	function update() {
+    		ghost.style.setProperty("--low", 100 * ((input.valueLow - min) / (max - min)) + 1 + "%");
+    		ghost.style.setProperty("--high", 100 * ((input.valueHigh - min) / (max - min)) - 1 + "%");
+    	}
+
+    	input.addEventListener("input", update);
+    	ghost.addEventListener("input", update);
+
+    	update();
+    }
+
+    multirange.init = function() {
+    	[].slice.call(document.querySelectorAll("input[type=range][multiple]:not(.multirange)")).forEach(multirange);
+    }
+
+    if (document.readyState == "loading") {
+    	document.addEventListener("DOMContentLoaded", multirange.init);
+    }
+    else {
+    	multirange.init();
+    }
+}
+
+module.exports = Multirange;
+
+},{}],9:[function(require,module,exports){
+'use strict';
+
 // Constructor
 var Slider = function() {
     var slider = $('._slider');
     var sliderMulti = $('._slidermulti');
+    var sliderCover = $('._slidercover');
+
     if (slider) {
         slider.each(function(){
             $(this).slick({
@@ -14798,7 +14970,7 @@ var Slider = function() {
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 centerMode: true,
-                autoplay: true,
+                autoplay: false,
                 responsive: [
                     {
                         breakpoint: 900,
@@ -14818,13 +14990,61 @@ var Slider = function() {
                     }
                 ]
             });
+
+            $(this).on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                var changingSlide = $(this).slick('getSlick').$slides.get(currentSlide);
+                $(changingSlide).find('.embed-responsive-item').attr('src', $('iframe').attr('src'));
+            });
+        });
+    }
+
+    if (sliderCover) {
+        sliderCover.each(function(){
+            $(this).slick({
+                dots: true,
+                infinite: true,
+                speed: 600,
+                slidesToShow:7,
+                slidesToScroll: 1,
+                centerMode: true,
+                autoplay: false,
+                responsive: [
+                    {
+                        breakpoint: 1400,
+                        settings: {
+                            slidesToShow: 5,
+                            slidesToScroll: 1,
+                            centerMode: true,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            centerMode: true,
+                            infinite: true
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            centerMode: true,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true
+                        }
+                    }
+                ]
+            });
         });
     }
 };
 
 module.exports = Slider;
 
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 (function (global){
 // Main javascript entry point
 // Should handle bootstrapping/starting application
@@ -14836,6 +15056,8 @@ global._ = require('underscore');
 var Header = require('../_modules/header/header');
 var Slider = require('../_modules/slider/slider');
 var Modal = require('../_modules/modal/modal');
+var Multirange = require('../_modules/multirange/multirange');
+var BuscadorTapas = require('../_modules/multirange/buscador-tapas');
 
 $(function() {
     require('../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min');
@@ -14844,10 +15066,12 @@ $(function() {
     new Header();
     new Slider();
     new Modal();
+    new Multirange();
+    new BuscadorTapas();
 });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min":1,"../../bower_components/slick-carousel/slick/slick":2,"../_modules/header/header":5,"../_modules/modal/modal":6,"../_modules/slider/slider":7,"jquery":3,"underscore":4}]},{},[8])
+},{"../../bower_components/bootstrap-sass/assets/javascripts/bootstrap.min":1,"../../bower_components/slick-carousel/slick/slick":2,"../_modules/header/header":5,"../_modules/modal/modal":6,"../_modules/multirange/buscador-tapas":7,"../_modules/multirange/multirange":8,"../_modules/slider/slider":9,"jquery":3,"underscore":4}]},{},[10])
 
 //# sourceMappingURL=main.js.map

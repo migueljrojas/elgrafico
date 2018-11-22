@@ -96,6 +96,56 @@ block content
                             +ads('skyscrapper', '/images/ads/galaxy.jpg')
                                 
         section.home__tapas
+            .container
+                .row
+                    .col-xs-24.col-sm-10
+                        .home__tapas__cover
+                            img(src="/images/home/tapa.jpg")
+                    .col-xs-24.col-sm-14
+                        .home__tapas__heading
+                            h2.home__tapas__section La Tapa destacada de Hoy
+                            a.home__tapas__link(href="/buscador-tapas") Ver todas
+                        .home__tapas__body
+                            span.home__tapas__date 25 de abril de 1952
+                            h3.home__tapas__title Guerrero y Cappozzo antes del oro olímpico
+                            p.home__tapas__text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                        .home__tapas__search
+                            .buscador-tapas__search__types
+                                .buscador-tapas__search__type
+                                    input(type='radio', id='all', name='covertype', checked)
+                                    label(for='all') todas las tapas
+                                .buscador-tapas__search__type
+                                    input(type='radio', id='printed', name='covertype')
+                                    label(for='printed') edicion impresa
+                                .buscador-tapas__search__type
+                                    input(type='radio', id='special', name='covertype')
+                                    label(for='special') especiales
+                                .buscador-tapas__search__type
+                                    input(type='radio', id='polo', name='covertype')
+                                    label(for='polo') polo
+
+                            .buscador-tapas__search__date-range
+                                .buscador-tapas__search__date-range__container
+                                    label.buscador-tapas__search__date-range__label.js-range-month-low
+                                    label.buscador-tapas__search__date-range__label.js-range-month-high
+                                    .buscador-tapas__search__date-range__bar-wrapper
+                                        input.buscador-tapas__search__date-range__bar.js-range-month(type='range', multiple, value="1,10", min="0", max="11", step="1")
+                                        input(type="hidden", name="from-month", id="inputMonthFrom")
+                                        input(type="hidden", name="to-month", id="inputMonthTo")
+
+                                .buscador-tapas__search__date-range__container
+                                    label.buscador-tapas__search__date-range__label.js-range-year-low
+                                    label.buscador-tapas__search__date-range__label.js-range-year-high
+                                    .buscador-tapas__search__date-range__bar-wrapper
+                                        input.buscador-tapas__search__date-range__bar.js-range-year(type='range', multiple, value="9,89", min="0", max="98",)
+                                        input(type="hidden", name="from-year", id="inputYearFrom")
+                                        input(type="hidden", name="to-year", id="inputYearTo")
+                            .buscador-tapas__search__search-form
+                                input.buscador-tapas__search__search-form__input(type='text' placeholder="palabra Clave (Ej.Messi)", name="keyword")
+                                input.buscador-tapas__search__search-form__input(type='number' placeholder='N° de edición', name="edicion")
+                                button.buscador-tapas__search__search-form__submit Buscar
+        
+                    
         section.home__latapa
             .container
                 .row

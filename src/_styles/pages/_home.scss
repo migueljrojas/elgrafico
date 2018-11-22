@@ -6,7 +6,6 @@
     &__ads {
         padding-top: 2%;
         padding-bottom: 2%;
-        background: $lightestGray;
     }
 
     &__main-articles {
@@ -79,7 +78,6 @@
 
     &__sidebar {
         &__ads {
-            background: $lightestGray;
             width: 100%;
             padding: 20px;
             margin-bottom: 20px;
@@ -153,9 +151,68 @@
     &__tapas {
         background: $black;
         padding: 40px 0;
+        color: $white;
 
         @include mq(md) {
             padding: 60px 0;
+        }
+
+        &__cover {
+            @include img(135%);
+
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        &__heading {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__section {
+            font-family: $menuFont;
+            text-transform: uppercase;
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        &__link {
+            color: $white;
+            padding: 10px;
+            border: 1px solid $white;
+            border-radius: 5px;
+            font-family: $altFont;
+        }
+
+        &__title {
+            font-family: $altFont;
+            font-size: 2em;
+            margin: 0 0 10px;
+        }
+
+        &__date {
+            color: $mainColor;
+            font-family: $menuFont;
+            font-size: 24px;
+        }
+
+        &__body {
+            margin-bottom: 40px;
+        }
+
+        .buscador-tapas__search__type {
+            label {
+                background: $darkGray;
+            }
+        }
+
+        .buscador-tapas__search__date-range__bar::-webkit-slider-runnable-track {
+            height: 6px;
+            background: $darkestGray;
         }
     }
 
@@ -177,7 +234,6 @@
 
         &__ads {
             padding: 10px;
-            background: $lightestGray;
         }
     }
 

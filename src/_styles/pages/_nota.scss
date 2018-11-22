@@ -39,6 +39,10 @@
             @include mq(md) {
                 padding-bottom: 48%;
             }
+
+            @include customMq(1400px) {
+                padding-bottom: 35%;
+            }
         }
 
         &__heading {
@@ -249,7 +253,6 @@
         }
 
         &__ads {
-            background: $lightestGray;
             width: 100%;
             padding: 20px;
             margin-bottom: 20px;

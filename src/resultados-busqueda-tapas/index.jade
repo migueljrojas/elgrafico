@@ -52,20 +52,6 @@ block content
                                 input.buscador-tapas__search__search-form__input(type='number' placeholder='N° de edición', name="edicion")
                                 button.buscador-tapas__search__search-form__submit Buscar
         
-        section.buscador-tapas__highlight
-            .buscador-tapas__highlight__container
-                .buscador-tapas__highlight__title 
-                    span destacadas de la semana
-                    i
-                .buscador-tapas__highlight__wrapper
-                    +slider('buscador-tapas__highlight__slider', 'cover')
-                        each item in site.data.tapas
-                            .buscador-tapas__highlight__slide
-                                .buscador-tapas__cover
-                                    .buscador-tapas__cover__image
-                                        img(src=item.tapa)
-                                    .buscador-tapas__cover__date
-                                        span=item.date
         .buscador-tapas__ads
             +ads('leaderboard', '/images/ads/flow.jpg')
                 
@@ -74,15 +60,8 @@ block content
                 .row
                     .col-xs-24
                         .buscador-tapas__gallery__title
-                            span Busqueda por decadas
+                            span Resultados de la Busqueda
                             i
-                .row
-                    .col-xs-24
-                        ul.buscador-tapas__gallery__selectors
-                            each item in site.data.decadeSelectors
-                                li.buscador-tapas__gallery__selector
-                                    input(type='radio', id=item.id, name='covertype', checked=item.checked)
-                                    label(for=item.id)=item.label
                 .row
                     .col-xs-12.col-sm-8.col-md-6
                         .buscador-tapas__cover

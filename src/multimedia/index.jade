@@ -13,8 +13,11 @@ block config
   - var baseUrl = '../'
 
 block content
-    main.multimedia.multimedia--standalone
+    main.multimedia
         section.multimedia__search
+            h2.multimedia__video__section
+                span= site.data.home.videos[0].section
+                i
             +searchbox('Buscá videos por palabra clave (Ej. Messi)')
                         
         section.multimedia__videos
@@ -23,10 +26,6 @@ block content
                     each video, index in site.data.home.videos
                         .multimedia__videos__slide
                             .multimedia__video(data-video-index="video-#{index}")
-                                .multimedia__video__heading
-                                    h2.multimedia__video__section
-                                        span= video.section
-                                        i
                                 .multimedia__video__player
                                     .multimedia__video__placeholder
                                         img(src="https://img.youtube.com/vi/#{video.id}/0.jpg")
@@ -54,29 +53,27 @@ block content
                         +ads('leaderboard', '/images/ads/flow.jpg')
         section.multimedia__most-viewed-videos
             .container
-                .row.nopadding
+                .row
                     .col-xs-24
                         h2.multimedia__most-viewed-videos__title 
                             span MAS VIDEOS
                             i
-            
-                    .col-xs-24.col-sm-12
+                            
+                .row.nopadding
+                    .col-xs-24.multimedia__most-viewed-videos__col
                         +article('video', {'video':'SE_JPAeFjZc'}, '', false, false, false)
-                    .col-xs-24.col-sm-12
                         +article('video', {'video':'SE_JPAeFjZc'}, '', false, false, false)
-                    .col-xs-24.col-sm-12
+                    .col-xs-24.multimedia__most-viewed-videos__col
                         +article('video', {'video':'SE_JPAeFjZc'}, '', false, false, false)
-                    .col-xs-24.col-sm-12
                         +article('video', {'video':'SE_JPAeFjZc'}, '', false, false, false)
-                    .col-xs-24.col-sm-12
+                    .col-xs-24.multimedia__most-viewed-videos__col
                         +article('video', {'video':'SE_JPAeFjZc'}, '', false, false, false)
-                    .col-xs-24.col-sm-12
                         +article('video', {'video':'SE_JPAeFjZc'}, '', false, false, false)
-                    .col-xs-24.col-sm-12
+                    .col-xs-24.multimedia__most-viewed-videos__col
                         +article('video', {'video':'SE_JPAeFjZc'}, '', false, false, false)
-                    .col-xs-24.col-sm-12
                         +article('video', {'video':'SE_JPAeFjZc'}, '', false, false, false)
-                    
+                
+                .row    
                     .col-xs-24
                         .multimedia__most-viewed-videos__more-button
                             +show-more('VER MAS VIDEOS')
