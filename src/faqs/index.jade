@@ -1,0 +1,332 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.faqs
+        section.faqs__heading
+            .container
+                .row
+                    .col-xs-24
+                        h1.faqs__title
+                            span Preguntas Frecuentes
+                            i
+
+        section.faqs__body
+            .container
+                .row
+                    .col-xs-24.col-sm-18.col-md-16.col-sm-offset-3.col-md-offset-4
+                        ul.faqs__list
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question1")
+                                label.faqs__item__heading(for="question1") Historia
+                                .faqs__item__body
+                                    span.faqs__item__question ¿Cuándo se fundó El Gráfico?
+                                    br
+                                    |                 El Gráfico fue fundado el 30 de mayo de 1919 por Constancio C. Vigil.
+                                    br
+                                    br
+                                    span.faqs__item__question Quiero conocer más sobre la historia de El Gráfico. ¿Dónde puedo consultar?
+                                    br
+                                    |                 En 2009, en ocasión del 90º aniversario, El Gráfico presentó dos micrositios. En "Grandes Coberturas" aparecen 90 hechos destacados y la cobertura que tuvieron en la revista. Y en "Memoria El Gráfico" revivimos personajes, anécdotas, todos los logos, joyas del archivo, periodistas y fotógrafos ilustres en la historia de la revista y también el ranking de tapas más valoradas por nuestros usuarios.
+
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question2")
+                                label.faqs__item__heading(for="question2") Archivos
+                                .faqs__item__body
+                                    span.faqs__item__question ¿El archivo de El Gráfico está disponible para consulta de material antiguo?
+                                    br
+                                    |                 No, el archivo de El Gráfico no está abierto al público y tampoco entrega material fotocopiado. A los interesados en recopilar notas e información aparecida en la revista les recomendamos dirigirse a la Biblioteca Nacional donde tienen la colección completa de El Gráfico.
+                                    br
+                                    br
+                                    span.faqs__item__question Quiero conocer más sobre la historia de El Gráfico. ¿Dónde puedo consultar?
+                                    br
+                                    |                 La mayoría del material de archivo está en sobres con recortes y fotos en papel. También hay otro sector de diapositivas y negativos. La colección de El Gráfico está encuadernada por tomos y no es digital. Por tal motivo, el manejo de dicho material es altamente sensible y debe hacerse con el mayor cuidado posible para evitar su deterioro. En el tiempo en que estuvo abierto al público, se dieron muchos casos de páginas arrancadas y material robado que obligaron a restringir el acceso para preservar la única colección existente. Juan Arcidiacono, nuestro jefe de archivo, se encarga de mantener el material en las mejores condiciones posibles para el uso periodístico.
+                                    br
+                                    br
+                                    span.faqs__item__question Necesito encontrar una tapa que recuerdo. ¿Cómo hago?
+                                    br
+                                    |                 En 2009, para celebrar su 90Â° aniversario, El Gráfico presentó un completo navegador de tapas, que incluye también el buscador de ediciones especiales, disponible para todos los usuarios. Allí se puede limitar la búsqueda por tema, por fecha exacta o aproximada, por número de edición y por personaje. Todas las tapas se pueden ampliar e imprimir.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Hay posibilidades de encontrar cuándo salió publicada una nota que recuerdo?
+                                    br
+                                    |                 En el navegador de tapas aparecen los sumarios completos a partir de noviembre de 2006. Aún no disponemos del servicio online para búsquedas anteriores a dicha fecha.
+                                    br
+                                    br
+                                    span.faqs__item__question
+                                    | Un familiar mío salió en las páginas de El Gráfico pero no tengo información precisa de la fecha. ¿Puedo conseguir más información?
+                                    br
+                                    |                 Lamentablemente, esas búsquedas requieren un tiempo de dedicación exclusiva que El Gráfico no está en condiciones de brindar, debido a la gran cantidad de pedidos personales que se reciben, cada uno de ellos de legítimo interés y no mensurable con el resto. Para búsqueda de dicho material, les recomendamos visitar la Biblioteca Nacional o la Biblioteca del Congreso, donde tienen la colección completa de El Gráfico.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Dónde encuentro la Biblioteca Nacional y la del Congreso?
+                                    br
+                                    |                 La Biblioteca Nacional está en Aguero 2502, Ciudad de Buenos Aires, y el teléfono es el 4808-6000. Allí le informarán los horarios de visita, de lunes a viernes. La Biblioteca del Congreso se encuentra en Hipólito Yrigoyen 1750, teléfono 4010-3000 interno 8014. Se consulta de lunes a viernes en el horario de 8 a 23 y sábados y domingos en horario a confirmar.
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question3")
+                                label.faqs__item__heading(for="question3") Publicidad
+                                .faqs__item__body
+                                    span.faqs__item__question
+                                    | Estoy interesado en pautar un aviso en alguno de los productos de El Gráfico: edición mensual, ediciones especiales, sitio en Internet o El Gráfico Polo.
+                                    br
+                                    |                 Puede contactarse directamente con nuestro departamento comercial. Gerente comercial: Carlos Lugano, (011) 4084-0288, 
+                                    a(href='mailto:clugano@elgrafico.com.ar') clugano@elgrafico.com.ar
+                                    | . Ejecutivas de cuentas: Camila Etchegaray, (011) 5058-7870, 
+                                    a(href='mailto:cetchegaray@elgrafico.com.ar') cetchegaray@elgrafico.com.ar
+                                    |  y Brenda Villegas (011) 4084-0023, 
+                                    a(href='mailto:bvillegas@elgrafico.com.ar') bvillegas@elgrafico.com.ar
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Cómo puedo tener un media kit de El Gráfico?
+                                    br
+                                    |                 Puede contactarse directamente con nuestro departamento comercial a los teléfonos indicados en la pregunta anterior.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Qué formatos de avisos se publican en las ediciones impresas?
+                                    br
+                                    |                 Los formatos usados son: página entera, media página, tercio vertical y pie de página. Para propuestas o paquetes especiales, se ruega contactar a nuestro departamento de publicidad para evaluar las diferentes posibilidades.
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question4")
+                                label.faqs__item__heading(for="question4") El Gráfico en internet
+                                .faqs__item__body
+                                    span.faqs__item__question ¿Cuál es la dirección de El Gráfico en la web?
+                                    br
+                                    |                 La dirección es 
+                                    a(href='http://www.elgrafico.com.ar') www.elgrafico.com.ar
+                                    | .
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Cómo hago para comentar las notas del sitio de El Gráfico?
+                                    br
+                                    |                 Para eso hace falta estar registrado. La registración es gratuita y muy sencilla. Una vez hecho el log-in, cualquier contenido de El Gráfico está disponible para los comentarios de los lectores.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿El Gráfico está en Twitter?
+                                    br
+                                    |                 Sí, la dirección es @elgraficoweb y allí se publica la información de nuestro sitio y misceláneas de otros tiempos.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿El Gráfico está en facebook?
+                                    br
+                                    |                 Sí, fue el primer medio argentino en sumarse a esta red social. Link directo: 
+                                    a(href='http://www.facebook.com/pages/El-Grafico/25206456431', target='_blank') http://www.facebook.com/pages/El-Grafico/25206456431
+                                    | .
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Qué puedo hacer en los perfiles de Twitter y Facebook?
+                                    br
+                                    |                 Participar en diversas consignas, concursos y estar en contacto con otros usuarios, lectores y admiradores. Comentar notas y noticias. Enterarse de todos los productos especiales y ver el adelanto de cada tapa. Vincularse con coleccionistas. Sin embargo, los canales de Twitter y Facebook no sirven para realizar ningún trámite administrativo referente a suscripción, renovación ni reclamos por suscripciones, distribución ni circulación. Para eso deben usarse los canales mencionados en el área suscripciones.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Dónde puedo encontrar el ranking de las tapas más valoradas?
+                                    br
+                                    |                 El ranking de las 100 tapas más valoradas se encuentra en el miscrositio "Memoria El Gráfico".
+                                    br
+                                    br
+                                    span.faqs__item__question
+                                    | ¿Cómo hago para mandar una pregunta para que se incluya en la futura Nota de los Lectores?
+                                    br
+                                    |                 Cuando el formulario con el próximo entrevistado esté activo, sólo hace falta contemplar los datos y enviar su pregunta.
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question5")
+                                label.faqs__item__heading(for="question5") Franquicias
+                                .faqs__item__body
+                                    span.faqs__item__question ¿Hay ediciones regionales o locales de El Gráfico fuera de la Argentina?
+                                    br
+                                    |                 Sí, El Gráfico tiene diversas franquicias que le permiten aparecer en Perú, Chile, Costa Rica, con contenidos locales y de la edición argentina. Para reconocer si un producto pertenece a la familia de El Gráfico, basta comprobar que el logo sea el mismo de El Gráfico.
+                                    br
+                                    br
+                                    span.faqs__item__question
+                                    | Estoy interesado en adquirir la franquicia de El Gráfico para mi país. ¿Con quién me debo contactar?
+                                    br
+                                    |                 Para consultas sobre franquicias, le rogamos contactar a Mariano Benacot o Florencia Saccone, a los teléfonos +5411-5235-4800. Internos: 137 y 347.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿El Gráfico de El Salvador tiene algo que ver con la revista El Gráfico?
+                                    br
+                                    |                 No. El Gráfico de El Salvador es un diario de ese país y fue fundado en 2004, apenas 85 años después del nacimiento de la revista El Gráfico.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿El Gráfico de México tiene algo que ver con la revista El Gráfico?
+                                    br
+                                    |                 No. Es un diario perteneciente al periódico El Universal.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Qué es El Gráfico Uruguay?
+                                    br
+                                    |                 El Gráfico Uruguay es la misma edición que aparece en la Argentina, pero con una tapa local y un agregado de 16 páginas del deporte uruguayo. El resto de las notas y páginas son exactamente las mismas que publica la edición regular de El Gráfico. La única diferencia es la portada y el agregado de páginas con notas locales.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿El Gráfico Uruguay se vende en la Argentina?
+                                    br
+                                    |                 No. El Gráfico Uruguay se vende sólo en Uruguay.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Puedo suscribirme a El Gráfico Uruguay?
+                                    br
+                                    |                 Sí. Los uruguayos interesados en obtener la edición uruguaya por suscripción anual, ya sea en Uruguay o en el exterior, pueden contactarse con los responsables de El Gráfico Uruguay: 
+                                    a(href='mailto:info@atlanticosur.net') info@atlanticosur.net
+                                    |  o al teléfono +598 24027747
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Qué es El Gráfico Chile?
+                                    br
+                                    |                 El Gráfico Chile es una franquicia oficial de la marca El Gráfico que se diseña, edita y vende en Chile, y que tiene contenido propio del deporte chileno, más algunas notas de la edición internacional de El Gráfico que se hace en la Argentina. Su sitio en Internet es 
+                                    a(href='mailto:http://www.elgrafico.cl/', target='_blank') http://www.elgrafico.cl/
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question6")
+                                label.faqs__item__heading(for="question6") Fotos
+                                .faqs__item__body
+                                    span.faqs__item__question ¿Cómo hago para comprar fotos?
+                                    br
+                                    |                 Debe escribir un email a la dirección 
+                                    a(href='mailto:ventafotos@elgrafico.com.ar') ventafotos@elgrafico.com.ar
+                                    |  e indicar el tipo de material buscado y el medio en el que se publicará. Hay material que ya está digitalizado y otro que requiere localizarse y digitalizarse. Para una exploración previa, lo invitamos a recorrer el banco de fotos, con más de 6.000 imágenes, en la dirección 
+                                    a(href='http://fotos.elgrafico.com.ar', target='_blank') http://fotos.elgrafico.com.ar
+                                    | .
+                                    br
+                                    br
+                                    span.faqs__item__question ¿El Gráfico manda fotos para pedidos particulares?
+                                    br
+                                    |                 Para comprar fotos de El Gráfico, hay que mandar un email a 
+                                    a(href='mailto:ventafotos@elgrafico.com.ar') ventafotos@elgrafico.com.ar
+                                    | . El Gráfico no hace ningún tipo de envío de material -ni en alta ni en baja resolución- que no haya sido previamente sometido a un proceso de venta y cesión de derechos.
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question7")
+                                label.faqs__item__heading(for="question7") Ejemplares Atrasados
+                                .faqs__item__body
+                                    span.faqs__item__question
+                                    | Quiero conseguir ediciones antiguas para completar mi colección de El Gráfico. ¿Es posible?
+                                    br
+                                    |                 No. El Gráfico no dispone de venta de material anterior al 2007 y tampoco garantiza disponibilidad de las ediciones publicadas después de esa fecha, ya que muchas están agotadas.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Cómo puedo obtener más información sobre ediciones antiguas?
+                                    br
+                                    |                 Para quienes buscan números históricos, recomendamos asistir a foros de coleccionistas, visitar el Parque Rivadavia en Buenos Aires, las librerías de la calle Corrientes o buscar en páginas online como Mercado Libre.
+                                    br
+                                    br
+                                    span.faqs__item__question
+                                    | Tengo una gran colección de El Gráfico de otras décadas. ¿Le interesa a El Gráfico comprar dicho material?
+                                    br
+                                    |                 El Gráfico no compra colecciones privadas.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Puedo anunciar compra o venta de ejemplares de El Gráfico?
+                                    br
+                                    |                 Sí, de manera gratuita. Puede utilizar el formulario de contacto, escribir a elgrafico@elgrafico.com.ar o mandar una carta a El Gráfico, Balcarce 510, 1Âº piso, (1064), Ciudad Autónoma de Buenos Aires. También puede aprovechar el foro de coleccionistas especialmente creado dentro de nuestro perfil en facebook.
+                                    br
+                                    br
+                                    span.faqs__item__question Quiero solicitar una edición mensual por correo. ¿Es posible?
+                                    br
+                                    |                 Si la edición que busca salió a partir del año 2007, puede enviar un email a club@elgrafico.com.ar en el que detalle la edición que busca. Allí le responderán si está en stock y los pasos a seguir para adquirirla. Si busca una edición anterior al 2007, deberá remitirse a foros de coleccionistas ya que El Gráfico no dispone material en stock de años anteriores a dicha fecha.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Cómo se formaliza una operación de compra de ediciones atrasadas?
+                                    br
+                                    |                 Una vez que recibió la confirmación por email de que el ejemplar está en stock, se le contactará por teléfono. Hay dos formas de concretar la operación. La más sencilla es por tarjeta de crédito; con los datos de la tarjeta, se formaliza la transacción y se coordina el envío. También se puede hacer por depósito bancario; una vez realizado, se debe enviar por fax el comprobante de dicha transacción al número (011) 5235-5137.
+                                    br
+                                    br
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question8")
+                                label.faqs__item__heading(for="question8") Correo de Lectores
+                                .faqs__item__body
+                                    span.faqs__item__question
+                                    | ¿Cómo hago para mandar una carta o mensaje para que se contemple en la sección Lectores de la edición impresa?
+                                    br
+                                    |                 Puede utilizar el formulario de contacto, escribir a 
+                                    a(href='mailto:elgrafico@elgrafico.com.ar') elgrafico@elgrafico.com.ar
+                                    |  (detallando en el asunto "Lectores") o mandar una carta a El Gráfico, Balcarce 510, 1Âº piso, (1064), Ciudad Autónoma de Buenos Aires. No olvide incluir sus datos personales.
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question9")
+                                label.faqs__item__heading(for="question9") CVs y Sumarios
+                                .faqs__item__body
+                                    span.faqs__item__question ¿A qué dirección puedo enviar mi CV?
+                                    br
+                                    |                 Los interesados en enviar un Curriculum Vitae pueden escribir a 
+                                    a(href='mailto:elgrafico@elgrafico.com.ar') elgrafico@elgrafico.com.ar
+                                    | , detallando en el asunto "CV". El mensaje será reenviado al Departamento de Recursos Humanos. La recepción de dicho mensaje no implica compromiso alguno de contacto ni presupone una comunicación futura.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Puedo enviar sumarios de notas a El Gráfico?
+                                    br
+                                    |                 El Gráfico tiene un grupo fijo de colaboradores y actualmente no recibe sumarios de periodistas freelance vía web. El Gráfico no se hace responsable ni se compromete a enviar una respuesta a todo material recibido que no haya sido solicitado previamente por un integrante de la redacción de El Gráfico.
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question10")
+                                label.faqs__item__heading(for="question10") Contacto
+                                .faqs__item__body
+                                    span.faqs__item__question Me interesa contactar a El Gráfico.
+                                    br
+                                    |                 Para comunicarse con la redacción de la revista y el sitio web puede utilizar el 
+                                    a(href='contacto.php') formulario de contacto
+                                    | .
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question11")
+                                label.faqs__item__heading(for="question11") Newsletter
+                                .faqs__item__body
+                                    span.faqs__item__question ¿Cómo hago para suscribirme al newsletter de El Gráfico?
+                                    br
+                                    |                 Basta con registrarse en el sitio 
+                                    a(href='') formulario de registración
+                                    |  y, además de poder comentar las notas que aparecen, recibirá novedades por e-mail.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿En qué consiste el newsletter de El Gráfico?
+                                    br
+                                    |                 Se les avisa a los usuarios que una nueva edición de El Gráfico está en la calle. También les llegan novedades referentes al sitio, concursos y participación.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Cómo cancelo la suscripción al newsletter?
+                                    br
+                                    |                 Es muy sencillo. Sólo debe ingresar a 
+                                    a(href='http://www.elgrafico.com.ar/desuscribirse.php') www.elgrafico.com.ar/desuscribirse.php
+                                    |  e ingresar su dirección de e-mail.
+                                    br
+                                    br
+                                    span.faqs__item__question
+                                    | ¿Si me suscribo al newsletter, recibiré mensajes de terceros, promociones o publicidad?
+                                    br
+                                    |                 No, absolutamente no. El newsletter de El Gráfico envía sólo actualizaciones propias de la revista y el sitio web. Los datos son tratados con absoluta privacidad y no se les ceden a otras empresas.
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question12")
+                                label.faqs__item__heading(for="question12") Videos y DVDs
+                                .faqs__item__body
+                                    span.faqs__item__question
+                                    | Quiero conseguir algunos de los videos VHS que aparecieron en El Gráfico semanal. ¿Están a la venta?
+                                    br
+                                    |                 No, El Gráfico no dispone de dicho material.
+                                    br
+                                    br
+                                    span.faqs__item__question
+                                    | Me interesa conseguir alguno de los DVD publicados por El Gráfico. ¿Están a la venta?
+                                    br
+                                    |                 No, las ediciones con DVD incluido (Palermo, Fangio, Guillermo Barros Schelotto, Estudiantes campeón 2006) están agotadas.
+                            
+                            li.faqs__item
+                                input(type="checkbox", id="question13")
+                                label.faqs__item__heading(for="question13") iPad
+                                .faqs__item__body
+                                    span.faqs__item__question ¿Está El Gráfico disponible en la tableta iPad?
+                                    br
+                                    |                 No, El Gráfico no dispone de dicho material.
+                                    br
+                                    br
+                                    span.faqs__item__question ¿Puedo suscribirme a El Gráfico para iPad?
+                                    br
+                                    |                 Sí, además de la compra de ejemplares sueltos, en esta versión se encuentran disponibles suscripciones por 6 meses (US$ 20,99) y 1 año (US$ 30,99).Durante los períodos de suscripción tendrá acceso a todos los ejemplares publicados digitalmente en iPad (Edición mensual, Ediciones especiales y Ediciones de Coleccción). El pago será cargado a la cuenta de usuario iTunes luego de aceptar la compra. Las suscripciones se renuevan automáticamente salvo que las mismas sean canceladas como máximo 24 horas antes de que termine el período actual. La cuenta de iTunes será cargada con el costo de renovación dentro de las 24 horas anteriores a la finalización del período actual, especificando el costo de la renovación. Las suscripciones deben ser administradas por el usuario y la renovación automática podrá ser desactivada desde la configuración de la cuenta iTunes del usuario en cualquier momento luego de la compra. No se permite cancelar la suscripción una vez adquirida (solo puede canc larse su renovación). Mas información en Ipad
+

@@ -1,0 +1,89 @@
+.faqs {
+
+    &__heading {
+        @include padd;
+    }
+
+    &__body {
+        @include padd(bottom);
+    }
+
+    &__title {
+        @include sectionTitle;
+    }
+
+    &__item {
+        $i: &;
+
+        margin-bottom: 20px;
+
+        &__body {
+            @include trans;
+
+            max-height:0;
+            overflow: hidden;
+            padding: 0 20px;
+            opacity: 0;
+        }
+
+        &__question {
+            color: $mainColor;
+            font-weight: 600;
+        }
+
+        &__heading {
+            @include trans;
+
+            padding: 10px;
+            position: relative;
+            background: $lightestGray;
+            font-family: $altFont;
+            font-weight: 300;
+            font-size: 24px;
+            display: block;
+
+            &:after,
+            &:before {
+                @include trans;
+                content: '';
+                width: 20px;
+                height: 1px;
+                position: absolute;
+                right:15px;
+                top: 50%;
+                background: $darkGray;
+                opacity: 1;
+            }
+
+            &:after {
+                transform: rotate(90deg);
+            }            
+        }
+
+        input[type="checkbox"] {
+            position: absolute;
+            left: -9999px;
+
+            &:checked {
+                & ~ #{$i}__heading {
+                    color: $mainColor;
+
+                    &:after,
+                    &:before {
+                        background: $mainColor;
+                    }
+
+                    &:after {
+                        opacity: 0;
+                    }
+                }
+
+                & ~ #{$i}__body {
+                    max-height: 150vh;
+                    padding: 20px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

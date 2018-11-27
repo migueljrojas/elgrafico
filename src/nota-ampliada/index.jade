@@ -8,7 +8,7 @@ block config
   - var baseUrl = '../'
 
 block content
-    main.nota
+    main.nota.nota--img-contained
         section.nota__hero
             .nota__hero__image
                 img(src='https://picsum.photos/1920/1200/')
@@ -203,10 +203,17 @@ block content
                     .col-xs-24
                         +article('picleft', {}, 'gray', false, false, false)
         section.nota__comments
-            h2.nota__comments__title
-                span DEJÁ TU COMENTARIO
-                i
-            .facebook__plugin
+            .container
+                .row
+                    .col-xs-24
+                        h2.nota__comments__title
+                            span DEJÁ TU COMENTARIO
+                            i
+                .row
+                    .col-xs-24.col-md-16.col-md-offset-4
+                        .facebook__plugin
+
+                        
         section.nota__ads
             .container
                 .row

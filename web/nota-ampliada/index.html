@@ -28,6 +28,8 @@
     <nav class="header__nav">
       <div class="header__nav__main">
         <div class="header__hamburguer header__hamburguer--nav"><span></span><span></span><span></span></div>
+      </div>
+      <div class="header__nav__menu">
         <ul class="header__menu header__menu--main">
           <li><a href="/notas">Notas</a>
           </li>
@@ -38,8 +40,6 @@
           <li><a href="/tapas">Tapas</a>
           </li>
         </ul>
-      </div>
-      <div class="header__nav__menu">
         <ul class="header__menu header__menu--secondary">
           <li><a href="#">MENU DE CONTENIDOS<i class="material-icons">keyboard_arrow_down</i></a>
             <ul class="header__submenu">
@@ -52,7 +52,6 @@
           <li><a href="#">FOTOS<i class="material-icons">keyboard_arrow_down</i></a>
             <ul class="header__submenu">
               <li><a href="/">LAS FOTOS DE EL GRÁFICO</a></li>
-              <li><a href="/">GALERÍA</a></li>
               <li><a href="/">LA TAPA</a></li>
             </ul>
           </li>
@@ -66,8 +65,6 @@
           <li><a href="#">NUESTRA HISTORIA<i class="material-icons">keyboard_arrow_down</i></a>
             <ul class="header__submenu">
               <li><a href="/">NAVEGADOR DE TAPAS</a></li>
-              <li><a href="/">MEMORIA EL GRÁFICO</a></li>
-              <li><a href="/">GRANDES COBERTURAS</a></li>
             </ul>
           </li>
           <li><a href="#">SERVICIOS<i class="material-icons">keyboard_arrow_down</i></a>
@@ -98,7 +95,7 @@
       </div>
     </nav>
   </header>
-  <main class="nota">
+  <main class="nota nota--img-contained">
     <section class="nota__hero">
       <div class="nota__hero__image"><img src="https://picsum.photos/1920/1200/"></div>
       <div class="nota__hero__heading__wrapper">
@@ -441,8 +438,18 @@
       </div>
     </section>
     <section class="nota__comments">
-      <h2 class="nota__comments__title"><span>DEJÁ TU COMENTARIO</span><i></i></h2>
-      <div class="facebook__plugin"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-24">
+            <h2 class="nota__comments__title"><span>DEJÁ TU COMENTARIO</span><i></i></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-24 col-md-16 col-md-offset-4">
+            <div class="facebook__plugin"></div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="nota__ads">
       <div class="container">

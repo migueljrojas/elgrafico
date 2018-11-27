@@ -30,10 +30,6 @@
                 "url":"/"
             },
             {
-                "name":"GALERÍA",
-                "url":"/"
-            },
-            {
                 "name":"LA TAPA",
                 "url":"/"
             }
@@ -63,14 +59,6 @@
         "submenu":[
             {
                 "name":"NAVEGADOR DE TAPAS",
-                "url":"/"
-            },
-            {
-                "name":"MEMORIA EL GRÁFICO",
-                "url":"/"
-            },
-            {
-                "name":"GRANDES COBERTURAS",
                 "url":"/"
             }
         ]
