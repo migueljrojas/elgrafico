@@ -1,0 +1,86 @@
+.seccion {
+    &__hero{
+        background: $lightestGray;
+        @include padd(both, half);
+        &__title {
+            @include sectionTitle()
+        }
+    }
+
+    .sidebar {
+        .ads{
+            @include mq(xs) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__articles {
+
+            @include mq(xs) {
+                display: none;
+            }
+
+            &__title {
+                font-size: 28px;
+            }
+        }
+
+        .article {
+            &__section {
+                display: none;
+            }
+        }
+    }
+
+    &__suscribe {
+        @include mq(xs) {
+            order: 1
+        }
+
+        .ads {
+            @include mq(xs) {
+                display: none;
+            }
+        }
+    }
+
+    &__content {
+        @include mq(xs) {
+            order: 2;
+        }
+    }
+
+    .ads {
+        margin-bottom: 30px;
+    }
+
+    &__more {
+        text-align: center;
+
+        &__button {
+            margin-top: 20px;
+            background: $mainColor;
+            color: $white;
+            font-family: $altFont;
+            margin-bottom: 25px;
+            line-height: 35px;
+            display: inline-block;
+            padding: 0 10px;
+
+            @include mq(md) {
+                padding: 0 30px;
+
+            }
+
+        }
+    }
+
+    &__ads {
+        @include padd(both, half);
+
+        @include mq(xs) {
+            display: none;
+        }
+    }
+
+}

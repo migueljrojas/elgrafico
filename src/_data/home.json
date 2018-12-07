@@ -1,0 +1,103 @@
+{
+    "cover":{
+        "img":"/images/home/top.jpg",
+        "section":"Las fotos de El Gráfico",
+        "title":"1958. Debut de Argentina en el mundial… de amarillo.",
+        "summary":"Papelón criollo. Argentina debuta en el Mundial de Suecia frente a Alemania luciendo el escudo y la casaca amarilla del club IFK Malmö, conseguida de raje ante la ausencia de camiseta alternativa.",
+        "sponsor":"/images/home/peugeot.png"
+    },
+    "main": [
+        {
+            "img":"/images/home/main1.jpg",
+            "section":"Las fotos de El Gráfico",
+            "title":"Raquel Giscafré, nro. 1 de su generación",
+            "summary":"Papelón criollo. Argentina debuta en el Mundial de Suecia frente a Alemania luciendo el escudo y la casaca amarilla del club IFK Malmö, conseguida de raje ante la ausencia de camiseta alternativa."
+        },
+        {
+            "img":"/images/home/main2.jpg",
+            "section":"Las entrevista de El Gráfico",
+            "title":"Javier Mascherano, 100x100:\"No hay peor crítico que yo mismo\"",
+            "summary":"Emblema histórico de la Selección Nacional, habla de su infancia, Barcelona, Messi, el bullying que le hizo Gallardo, las finales perdidas con Argentina y su futuro, entre otros temas."
+        },
+        {
+            "img":"/images/home/main3.jpg",
+            "section":"Habla memoria",
+            "title":"Manya: el origen del apodo de Peñarol",
+            "summary":"El apodo surgió durante una disputa familiar y se reafirmó en una pelea entre dos jugadores en pleno clásico ante Nacional. En la foto una leyenda Manya: Gradín y el crack de Nacional Carlos Scarone"
+        },
+        {
+            "img":"/images/home/main4.jpg",
+            "section":"Las CRÓNICAS de El Gráfico",
+            "title":"Tres anécdotas boquenses",
+            "summary":"El aguatero que no podía pronunciar la l, los sobretodos de Cherro y Varallo y el carnero que se salvó del asador. Tres divertidas historias de la trastienda de Boca de los años 30 por Borocotó."
+        },
+        {
+            "img":"/images/home/main5.jpg",
+            "section":"Las entrevista de El Gráfico",
+            "title":"El pugilato entre los antiguos griegos",
+            "summary":"“El vencedor de los Juegos que estás viendo, tuvo en otro tiempo nariz, orejas y dientes”. Este relato pinta el brutal pugilato que se practicaban en Grecia, actividad que también tuvo sus virtuosos."
+        },
+        {
+            "img":"/images/home/main6.jpg",
+            "section":"Habla memoria",
+            "title":"Los locos del fútbol: Gatti",
+            "summary":"Hugo Gatti. Fue un arquero único e irrepetible y además un rayado hermoso que hizo del fútbol un espectáculo más divertido. Pasen y vean las locuras y las fotos del loco más cuerdo del fútbol."
+        }
+    ],
+    "interest":[
+        {
+            "img":"/images/home/interest1.jpg",
+            "title":"¡Habla memoria!"
+        },
+        {
+            "img":"/images/home/interest2.jpg",
+            "title":"LAS ENTREVISTAS DE EL GRÁFICO"
+        },
+        {
+            "img":"/images/home/interest3.jpg",
+            "title":"UN SIGLO EN PEQUEÑAS HISTORIAS"
+        },
+        {
+            "img":"/images/home/interest4.jpg",
+            "title":"MEMORIA EMOTIVA"
+        }
+    ],
+    "videos":[
+        {
+            "id":"RPGXhJ0luAQ",
+            "section":"¡Habla memoria!",
+            "title":"Alemania 74. El inicio de final más increíble de la historia de los Mundiales",
+            "desc":"Final del Mundo entre Alemania Occidental y Holanda. Saca del medio La Naranja Mecánica. En 53 segundos y después de 15 toques sin que el rival toque la pelota, penal a Cruyff. Para la historia."
+        },
+        {
+            "id":"NiG6ICpE8Z0",
+            "section":"¡Habla memoria!",
+            "title":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+            "desc":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat y después de 15 toques sin que el rival toque la pelota, penal a Cruyff. Para la historia."
+        },
+        {
+            "id":"7HXwBz5qeDM",
+            "section":"¡Habla memoria!",
+            "title":"Alemania 74. El inicio de final más increíble de la historia de los Mundiales",
+            "desc":"Final del Mundo entre Alemania Occidental y Holanda. Saca del medio La Naranja Mecánica. En 53 segundos y después de 15 toques sin que el rival toque la pelota, penal a Cruyff. Para la historia."
+        },
+        {
+            "id":"zzb1F0A3-h4",
+            "section":"¡Habla memoria!",
+            "title":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+            "desc":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        {
+            "id":"Wvb8dqwL40Y",
+            "section":"¡Habla memoria!",
+            "title":"Alemania 74. El inicio de final más increíble de la historia de los Mundiales",
+            "desc":"Final del Mundo entre Alemania Occidental y Holanda. Saca del medio La Naranja Mecánica. En 53 segundos y después de 15 toques sin que el rival toque la pelota, penal a Cruyff. Para la historia."
+        },
+        {
+            "id":"wN21I_F7MN0",
+            "section":"¡Habla memoria!",
+            "title":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+            "desc":"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+    ]
+}

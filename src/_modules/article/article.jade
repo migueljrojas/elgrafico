@@ -1,0 +1,28 @@
+mixin article(mode, data, ztyle, nopic, nosection, nosummary)
+    - var data = data ? data : {};
+    
+    article.article(class="#{mode === 'cover' ? 'article--cover' : ''} #{mode === 'bigcover' ? 'article--bigcover' : ''} #{mode === 'compact' ? 'article--compact' : ''} #{ztyle === 'gray' ? 'article--gray' : ''} #{mode === 'picleft' ? 'article--picleft' : ''} #{mode === 'picright' ? 'article--picright' : ''} #{ztyle === 'picleft' ? 'article--picleft' : ''} #{ztyle === 'picright' ? 'article--picright' : ''} #{mode === 'latapa' ? 'article--latapa' : ''} #{mode === 'video' ? 'article--video' : ''}" )
+        if nopic == false
+            if mode == 'video'
+                .article__img
+                    a(href="#", data-modal="open", data-src=data.video, data-type="video")
+                        img(src="https://img.youtube.com/vi/#{data.video}/default.jpg")
+            if mode != 'video'
+                .article__img
+                    a(href="/nota-ampliada")
+                        img(src="#{data.img ? data.img : 'https://picsum.photos/720/540/'}")
+        .article__data
+            .article__data__info
+                if nosection == false
+                    p.article__section(data-section)= data.section ? data.section : 'Nombre de Sección'
+                if mode == 'video'
+                    a(href="#", data-modal="open", data-src=data.video, data-type="video")
+                        h3.article__title(data-title)= data.title ? data.title : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+                if mode != 'video'
+                    a(href="/nota-ampliada")
+                        h3.article__title(data-title)= data.title ? data.title : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+                if nosummary == false
+                    p.article__summary(data-summary)= data.summary ? data.summary : 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip'
+            if data.sponsor
+                .article__sponsor
+                    img(src=data.sponsor)

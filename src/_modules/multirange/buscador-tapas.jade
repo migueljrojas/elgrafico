@@ -1,0 +1,35 @@
+mixin buscador-tapas()
+    .buscador-tapas__search__types
+        .buscador-tapas__search__type
+            input(type='radio', id='all', name='covertype', checked)
+            label(for='all') todas las tapas
+        .buscador-tapas__search__type
+            input(type='radio', id='printed', name='covertype')
+            label(for='printed') edicion impresa
+        .buscador-tapas__search__type
+            input(type='radio', id='special', name='covertype')
+            label(for='special') especiales
+        .buscador-tapas__search__type
+            input(type='radio', id='polo', name='covertype')
+            label(for='polo') polo
+
+    .buscador-tapas__search__date-range
+        .buscador-tapas__search__date-range__container
+            label.buscador-tapas__search__date-range__label.js-range-month-low
+            label.buscador-tapas__search__date-range__label.js-range-month-high
+            .buscador-tapas__search__date-range__bar-wrapper
+                input.buscador-tapas__search__date-range__bar.js-range-month(type='range', multiple, value="1,12", min="1", max="12", step="1")
+                input(type="hidden", name="from-month", id="inputMonthFrom")
+                input(type="hidden", name="to-month", id="inputMonthTo")
+
+        .buscador-tapas__search__date-range__container
+            label.buscador-tapas__search__date-range__label.js-range-year-low
+            label.buscador-tapas__search__date-range__label.js-range-year-high
+            .buscador-tapas__search__date-range__bar-wrapper
+                input.buscador-tapas__search__date-range__bar.js-range-year(type='range', multiple, value="1920,2018", min="1920", max="2018",)
+                input(type="hidden", name="from-year", id="inputYearFrom")
+                input(type="hidden", name="to-year", id="inputYearTo")
+    .buscador-tapas__search__search-form
+        input.buscador-tapas__search__search-form__input(type='text' placeholder="palabra Clave (Ej.Messi)", name="keyword")
+        input.buscador-tapas__search__search-form__input(type='number' placeholder='N° de edición', name="edicion")
+        button.buscador-tapas__search__search-form__submit Buscar

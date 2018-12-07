@@ -1,0 +1,283 @@
+.article {
+    $a:&;
+
+    &__section {
+        color: $red;
+        font-family: $altFont;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+    }
+
+    &__title {
+        color: $black;
+        margin: 0 0 15px;
+    }
+
+    &__summary {
+        color: $darkGray;
+        margin: 0;
+    }
+
+    &--bigcover,
+    &--cover {
+        position: relative;
+
+        #{$a}__img {
+            @include img;
+            margin-bottom: -15%;
+        }
+
+        #{$a}__data {
+            position:relative;
+            z-index: 2;
+            background: $white;
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 3%;
+            display: flex;
+        }
+
+        #{$a}__title {
+            font-size: 32px;
+
+            @include mq(md) {
+                font-size: 44px;
+            }
+        }
+
+        #{$a}__summary,
+        #{$a}__section {
+            font-size: 16px;
+
+            @include mq(md) {
+                font-size: 21px;
+            }
+        }
+
+        #{$a}__sponsor {
+            padding-left: 20px;
+            margin-left: 20px;
+            max-width: 160px;
+            border-left: 1px solid $lightGray;
+        }
+    }
+
+    &--bigcover {
+        #{$a}__img {
+            @include img(36%);
+            margin-bottom: -7%;
+        }
+    }
+
+    &--cover {
+        #{$a}__data {
+            width: 90%;
+            padding: 5%;
+        }
+
+        #{$a}__title {
+            font-size: 21px;
+            text-align: left;
+
+            @include mq(md) {
+                font-size: 24px;
+            }
+        }
+
+        #{$a}__summary {
+            text-align: left;
+        }
+
+        #{$a}__summary,
+        #{$a}__section {
+            font-size: 14px;
+
+            @include mq(md) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &--picleft {
+        display: flex;
+
+        #{$a}__data {
+            width: 50%;
+            padding: 10px;
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @include mq(md) {
+                padding: 20px;
+            }
+        }
+
+        #{$a}__img {
+            @include img($ratio: 32%, $width: 50%);
+        }
+
+        #{$a}__title {
+            font-size: 16px;
+            margin: 0;
+
+            @include mq(md) {
+                font-size: 28px;
+                margin: 0 0 15px;
+            }
+        }
+
+        #{$a}__summary,
+        #{$a}__section {
+            display: none;
+
+            @include mq(md) {
+                display: block;
+            }
+        }
+    }
+
+    &--picright {
+        display: flex;
+
+        #{$a}__data {
+            width: 50%;
+            padding: 10px;
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            &:before {
+                border-right: none;
+                border-left: 10px solid $lightestGray;
+                right: auto;
+                left: 100%;
+            }
+
+            @include mq(md) {
+                padding: 20px;
+            }
+        }
+
+        #{$a}__img {
+            @include img($ratio: 32%, $width: 50%);
+            order: 2;
+        }
+
+        #{$a}__title {
+            font-size: 16px;
+            margin: 0;
+
+            @include mq(md) {
+                font-size: 28px;
+                margin: 0 0 15px;
+            }
+        }
+
+        #{$a}__summary,
+        #{$a}__section {
+            display: none;
+
+            @include mq(md) {
+                display: block;
+            }
+        }
+    }
+
+    &--compact {
+        #{$a}__title {
+            font-size: 16px;
+
+            @include mq(md) {
+                font-size: 18px;
+            }
+        }
+
+        #{$a}__section {
+            font-size: 12px;
+
+            @include mq(md) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &--latapa {
+        #{$a}__img {
+            @include img($ratio: 135%, $width: 100%);
+
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        #{$a}__data {
+            padding-top: 15px;
+        }
+    }
+
+    &--gray {
+        #{$a}__data {
+            background: $lightestGray;
+        }
+    }
+
+    &--video {
+        display: flex;
+        margin-bottom: 20px;
+
+        #{$a}__title {
+            font-size: 12px;
+
+            @include mq(md) {
+                font-size: 22px;
+            }
+        }
+
+        #{$a}__section {
+            font-size: 12px;
+
+            @include mq(md) {
+                font-size: 16px;
+            }
+        }
+
+        #{$a}__summary {
+            display: none;
+        }
+
+        #{$a}__data {
+            width: 50%;
+            padding: 10px;
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: $lightestGray;
+            position: relative;
+
+            @include mq(md) {
+                padding: 20px;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: calc(50% - 5px);
+                height: 10px;
+                border-right: 10px solid $lightestGray;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                right: 100%;
+            }
+        }
+
+        #{$a}__img {
+            @include img($ratio: 32%, $width: 50%);
+        }
+    }
+}

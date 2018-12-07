@@ -1,0 +1,23 @@
+.show-more {
+    text-align: center;
+    height: 35px;
+    max-width: 370px;
+    margin-top: 20px;
+    background: $mainColor;
+    color: $white;
+    font-family: $altFont;
+    margin-bottom: 25px;
+    line-height: 35px;
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: $white;
+    }
+
+    @include mq(md) {
+        padding: 0 30px;
+
+    }
+}

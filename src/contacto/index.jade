@@ -1,0 +1,49 @@
+extends ../_layouts/base
+
+block config
+  //- Correct base url pathing for this page
+  - var baseUrl = '../'
+
+block content
+    main.contacto
+        section.contacto__heading
+            .container
+                .row
+                    .col-xs-24
+                        h1.contacto__title
+                            span Contacto
+                            i
+
+        section.contacto__body
+            .container
+                .row
+                    .col-xs-24.col-sm-16.col-md-12.col-sm-offset-4.col-md-offset-6
+                        form.contacto__form
+                            .contacto__form__group
+                                label.contacto__form__label Nombre
+                                input.contacto__form__input(type="text")
+                            .contacto__form__group
+                                label.contacto__form__label Apellido
+                                input.contacto__form__input(type="text")
+                            .contacto__form__group
+                                label.contacto__form__label Email
+                                input.contacto__form__input(type="email")
+                            .contacto__form__group
+                                label.contacto__form__label Dirección
+                                input.contacto__form__input(type="text")
+                            .contacto__form__group
+                                label.contacto__form__label Mensaje
+                                textarea.contacto__form__input.contacto__form__input--textarea()
+                            .contacto__form__group.contacto__form__group--alt
+                                p.contacto__form__label ¿Querés recibir nuestro newsletter en tu email?
+                                .contacto__form__radiogroup
+                                    .contacto__form__radio
+                                        label Sí
+                                        input(type="radio", name="suscripcion")
+                                    .contacto__form__radio
+                                        label No
+                                        input(type="radio", name="suscripcion")
+                            .contacto__form__group
+                                button.contacto__form__submit Enviar
+
+

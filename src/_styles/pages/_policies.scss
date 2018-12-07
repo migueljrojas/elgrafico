@@ -1,0 +1,14 @@
+.policies {
+
+    &__heading {
+        @include padd;
+    }
+
+    &__body {
+        @include padd(bottom);
+    }
+
+    &__title {
+        @include sectionTitle;
+    }
+}
