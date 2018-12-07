@@ -43,8 +43,8 @@ var BuscadorTapas = function() {
         }
 
         function updateMonthLabelPosition(low, high) {
-            monthLabelLow.css('left', (low * 100)/11 + '%');
-            monthLabelHigh.css('left', (high * 100)/11 + '%');
+            monthLabelLow.css('left', ((low-1) * 100)/11 + '%');
+            monthLabelHigh.css('left', ((high-1) * 100)/11 + '%');
         }
 
         monthInputRange.on('input', updateMonthRangeValues);
@@ -52,23 +52,26 @@ var BuscadorTapas = function() {
 
         function updateYearRangeValues() {
             var yearInputValue = $('.js-range-year.original');
-            var baseYear = 1920;
 
             var valueLow = yearInputValue.get(0).valueLow;
             var valueHigh = yearInputValue.get(0).valueHigh;
+            
+            var min = yearInputValue.get(0).min;
+            var max = yearInputValue.get(0).max;
+            
+            yearLabelLow.html('<span>' + (valueLow) + '</span>');
+            yearLabelHigh.html('<span>' + (valueHigh) + '</span>');
 
-            yearLabelLow.html('<span>' + (baseYear + valueLow) + '</span>');
-            yearLabelHigh.html('<span>' + (baseYear + valueHigh) + '</span>');
+            yearInputFrom.val(valueLow);
+            yearInputTo.val(valueHigh);
 
-            yearInputFrom.val(baseYear + valueLow);
-            yearInputTo.val(baseYear + valueHigh);
-
-            updateYearLabelPosition(valueLow, valueHigh);
+            updateYearLabelPosition(min, max, valueLow, valueHigh);
         }
 
-        function updateYearLabelPosition(low, high) {
-            yearLabelLow.css('left', (low * 100)/98 + '%');
-            yearLabelHigh.css('left', (high * 100)/98 + '%');
+        function updateYearLabelPosition(min, max, low, high) {
+            var qty=max-min;
+            yearLabelLow.css('left', ((low-min) * 100)/qty + '%');
+            yearLabelHigh.css('left', ((high-min) * 100)/qty + '%');
         }
 
         yearInputRange.on('input', updateYearRangeValues);

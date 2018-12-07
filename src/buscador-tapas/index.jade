@@ -4,6 +4,7 @@ include ../_modules/ads/ads
 include ../_modules/slider/slider
 include ../_modules/modal/modal
 include ../_modules/show-more/show-more
+include ../_modules/multirange/buscador-tapas
 
 block config
   //- Correct base url pathing for this page
@@ -17,41 +18,8 @@ block content
                 .row
                     .col-xs-24
                         form.buscador-tapas__search__container
-                            .buscador-tapas__search__types
-                                .buscador-tapas__search__type
-                                    input(type='radio', id='all', name='covertype', checked)
-                                    label(for='all') todas las tapas
-                                .buscador-tapas__search__type
-                                    input(type='radio', id='printed', name='covertype')
-                                    label(for='printed') edicion impresa
-                                .buscador-tapas__search__type
-                                    input(type='radio', id='special', name='covertype')
-                                    label(for='special') especiales
-                                .buscador-tapas__search__type
-                                    input(type='radio', id='polo', name='covertype')
-                                    label(for='polo') polo
-
-                            .buscador-tapas__search__date-range
-                                .buscador-tapas__search__date-range__container
-                                    label.buscador-tapas__search__date-range__label.js-range-month-low
-                                    label.buscador-tapas__search__date-range__label.js-range-month-high
-                                    .buscador-tapas__search__date-range__bar-wrapper
-                                        input.buscador-tapas__search__date-range__bar.js-range-month(type='range', multiple, value="1,10", min="0", max="11", step="1")
-                                        input(type="hidden", name="from-month", id="inputMonthFrom")
-                                        input(type="hidden", name="to-month", id="inputMonthTo")
-
-                                .buscador-tapas__search__date-range__container
-                                    label.buscador-tapas__search__date-range__label.js-range-year-low
-                                    label.buscador-tapas__search__date-range__label.js-range-year-high
-                                    .buscador-tapas__search__date-range__bar-wrapper
-                                        input.buscador-tapas__search__date-range__bar.js-range-year(type='range', multiple, value="9,89", min="0", max="98",)
-                                        input(type="hidden", name="from-year", id="inputYearFrom")
-                                        input(type="hidden", name="to-year", id="inputYearTo")
-                            .buscador-tapas__search__search-form
-                                input.buscador-tapas__search__search-form__input(type='text' placeholder="palabra Clave (Ej.Messi)", name="keyword")
-                                input.buscador-tapas__search__search-form__input(type='number' placeholder='N° de edición', name="edicion")
-                                button.buscador-tapas__search__search-form__submit Buscar
-        
+                            +buscador-tapas
+                            
         section.buscador-tapas__highlight
             .buscador-tapas__highlight__container
                 .buscador-tapas__highlight__title 
